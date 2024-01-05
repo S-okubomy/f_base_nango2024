@@ -13,7 +13,7 @@ class Sidebar extends React.Component {
           <h3>南郷7丁目チャンネル</h3>
             <ul>
               <div className="youtube">
-                {/* <div className="g-ytsubscribe" data-channelid="UCJqq9wYdNCzzuRvAeI_Op7Q" data-layout="full" data-count="default"></div> */}
+                <div className="g-ytsubscribe" data-channelid="UCJqq9wYdNCzzuRvAeI_Op7Q" data-layout="full" data-count="default"></div>
                 <div className="yb_nango">
                   {/* <iframe data-src="https://www.youtube.com/embed/fFLTWvUWRTU?start=539" ></iframe> */}
                   <iframe

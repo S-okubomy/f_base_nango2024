@@ -19,14 +19,25 @@ class Header extends React.Component {
             <img src="/static/hp_nango/images/header.jpg" alt="" width="880" height="256" />
         </div>
 
-        <nav id="mainNav" name="mainNav">
+        <h2 className="title" style={{ background: "#FCFCE0" }}>
+          <li><Link to="/nango"><strong>トップページ</strong><span>TOP</span></Link></li>
+          <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
+          <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
+          <li><Link to="/nango/rt/system_nango_temp">ご利用方法</Link></li>
+          <li><Link to="/nango/rt/party_nango_temp">宴会プラン</Link></li>
+          <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
+          <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
+          <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong><span>Events</span></Link></li>
+        </h2>
+
+        {/* <nav id="mainNav" name="mainNav">
           <div className="inner">
             <a className="menu" id="menu"><span style={{ fontSize: "15px", color: "red" }} >サイトマップ（ここクリック）&#x1f3b5;</span></a>
             <div className="panel">
               <ul>
                 <li><Link to="/nango"><strong>トップページ</strong><span>TOP</span></Link></li>
                 <li><Link to="/nango/rt/info_nango_temp"><strong>お店のご案内</strong><span>Information</span></Link>
-                  <ul class="sub-menu">
+                  <ul className="sub-menu">
                     <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
                     <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
                   </ul>
@@ -47,18 +58,14 @@ class Header extends React.Component {
                 <li><a href="/nango/rt/play_music_info_nango_temp" target="_blank"><strong>ツール</strong><span>tool</span></a>
                   <ul className="sub-menu">
                     <li><Link to="/nango">利用できません</Link></li>
-                    {/* <li><Link to="/nango/rt/board_nango_temp">掲示板</Link></li>
-                    <li><a href="/board">掲示板（TEC）</a></li>
-                    <li><Link to="/nango/rt/qa_by_ai_temp">AI 南郷君</Link></li>
-                    <li><Link to="/nango/rt/make_music_melo_temp">メロ作成</Link></li>
-                    <li><Link to="/nango/rt/play_music_info_nango_temp">楽曲一覧!!</Link></li>
-                    <li><a href="/nango/rec_music">お勧め曲 検索</a></li> */}
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
+
+
       </div>
     );
   };

@@ -1,14 +1,14 @@
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import App from "./App";
+// import App from "./App";
 // import "./index.css";
 import "./css/rt.css";
 import "./css/style.css";
 // import { BrowserRouter } from 'react-router-dom'
 
 import React, {lazy,Suspense} from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
 import Footer from './common/Footer';
@@ -32,7 +32,6 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-        {/* <App /> */}
         <BrowserRouter>
           <Header />
           <Suspense fallback={LoadingComponent()}>

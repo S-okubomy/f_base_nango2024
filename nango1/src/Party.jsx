@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Party extends React.Component {
   constructor(props) {
@@ -10,7 +11,9 @@ class Party extends React.Component {
       <div id="content">
         <section>
           <ul className="post">
-            <img src="/static/hp_nango/images/plan_main.jpg" width="100%" alt="貸切" style={{ margin: "0px" }} />
+            <Link to="/nango/rt/party_nango_temp" >
+              <img src="/static/hp_nango/images/plan_main.jpg" width="100%" alt="貸切" style={{ margin: "0px" }} />
+            </Link>
           </ul>
         </section>
 

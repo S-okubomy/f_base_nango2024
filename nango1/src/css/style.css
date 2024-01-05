@@ -629,12 +629,12 @@ ul.board_detail h3{
   background: url(images/menuOpen.png) no-repeat 5px 8px;
 	}
 	
-	nav#mainNav a#menu span{padding-left:35px;
-	  }
-	
+	nav#mainNav a#menu span{
+		padding-left:35px;
+	}
 	
 	nav#mainNav a.menuOpen{
-	background: url(images/menuOpen.png) no-repeat 5px -34px;
+		background: url(images/menuOpen.png) no-repeat 5px -34px;
 	}
 	
 	nav#mainNav a#menu:hover{cursor:pointer;}

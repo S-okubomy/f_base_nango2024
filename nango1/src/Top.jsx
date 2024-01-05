@@ -19,9 +19,9 @@ class Top extends React.Component {
         qa_infos: [],
         isLoadedTopAI: false,
       };
-      this.loadTopInfo = this.loadTopInfo.bind(this);
-      this.getHtml = this.getHtml.bind(this);
-      this.getTopAiComment = this.getTopAiComment.bind(this);
+      // this.loadTopInfo = this.loadTopInfo.bind(this);
+      // this.getHtml = this.getHtml.bind(this);
+      // this.getTopAiComment = this.getTopAiComment.bind(this);
     }
   
     loadTopInfo() {
@@ -69,8 +69,8 @@ class Top extends React.Component {
     }
 
     componentDidMount() {
-      this.loadTopInfo();
-      this.getTopAiComment();
+      // this.loadTopInfo();
+      // this.getTopAiComment();
     }
 
     getHtml() {
@@ -119,8 +119,8 @@ class Top extends React.Component {
           </section>
 
           <section>
-            <h2 class="title">“いらっしゃいませ！”　当店のコンセプトについてご説明いたします。</h2>
-            <ul class="post">
+            <h2 className="title">“いらっしゃいませ！”　当店のコンセプトについてご説明いたします。</h2>
+            <ul className="post">
               <li>
                   <span style={{ fontSize: "20px", fontWeight: "bold", color: "blue" }} >＜気楽、和気あいあいを大切に＞</span><br/>
                   当店は初めての方でも、気楽に楽しいひと時をモットー<br/>
@@ -184,8 +184,10 @@ class Top extends React.Component {
                   <span style={{ fontSize: "20px", fontWeight: "bold", color: "blue" }} >＜アクセスの良さ＞</span><br/>
                   当店はJR吉祥寺駅より徒歩3分とアクセスしやすい立地となっております。<br/>
                   <table>
+                    <tbody>
                       <tr><td><img src="/static/hp_nango/images/map2.jpg" alt="" width="400" /></td></tr>
                       <tr><td><Link to="/nango/rt/info_nango_temp" ><span style={{ fontWeight: "bold", color: "blue" }} >詳細はこちらをクリック</span></Link></td></tr>
+                    </tbody>
                   </table>
               </li>
             </ul>
