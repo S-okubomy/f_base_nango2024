@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+    <title>吉祥寺のライブ酒場&amp;喫茶　南郷７丁目</title>
+    <link rel="icon" type="image/x-icon" href="/static/hp_nango/images/favicon.ico">
+    <link rel="shortcut icon" href="https://nango7.okbmk.com/static/hp_nango/images/favicon.ico">  <!-- faviアイコン用 検索結果に反映されなかったら消す -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/hp_nango/images/apple-touch-icon-180x180.png">
+
+    <meta name="description" content="東京都武蔵野市吉祥寺南町にあるフォークをこよなく愛する者の酒場・喫茶「南郷７丁目」。生演奏のイベントやライブなど行っております。賑やかな街から少し離れた、ここ南郷７丁目で皆様のお越しを、スタッフ一同お待ちしております">
+    <meta name="keywords" content="吉祥寺,南郷７丁目,フォーク,ライブ,昭和,居酒屋,喫茶,ライブハウス">
+
+    <!-- twitter カード用 -->
+    <meta name="twitter:site" content="@okbmsyk" />
+    <meta name="twitter:title" content="吉祥寺のフォーク酒場 南郷７丁目" />
+    <meta name="twitter:description" content="東京都武蔵野市吉祥寺南町にあるフォークをこよなく愛する者の酒場・喫茶「南郷７丁目」。生演奏のイベントやライブなど行っております。賑やかな街から少し離れた、ここ南郷７丁目で皆様のお越しを、スタッフ一同お待ちしております" />
+    <meta name="twitter:image" content="https://nango-img.s3-ap-northeast-1.amazonaws.com/tabImg.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+    />
+
+    <!-- 画像スライドショー用-->
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
+    <!-- オリジナルCSS 上書きするのでCSSの一番最後に配置する-->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/rt.css" type="text/css" media="screen">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <script src="/static/hp_nango/js/jquery1.7.2.min.js"></script>
+    <script src="/static/hp_nango/js/script.js"></script>
+
+    <!-- youtube 埋め込み関連 -->
+    <script src="https://apis.google.com/js/platform.js" defer></script>
+    <script defer>
+      $(function(){
+        $('.yb_nango').each(function() {
+          var iframe = $(this).children('iframe');
+          var url = iframe.attr('data-src');
+          var id = url.match(/[\/?=]([a-zA-Z0-9_-]{11})[&\?]?/)[1];
+          iframe.before('<img src="https://img.youtube.com/vi/'+id+'/mqdefault.jpg" style="width : 100%" />').remove();
+          $(this).on('click', function() {
+            $(this).after('<div class="yb_nango"><iframe src="https://www.youtube.com/embed/'+id+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>').remove();
+          });
+        });
+      });
+    </script>
+    <script defer>
+      $(function(){
+        $('.yb_tennai').each(function() {
+          var iframe = $(this).children('iframe');
+          var url = iframe.attr('data-src');
+          var id = url.match(/[\/?=]([a-zA-Z0-9_-]{11})[&\?]?/)[1];
+          iframe.before('<img src="https://img.youtube.com/vi/'+id+'/mqdefault.jpg" style="width : 100%" />').remove();
+          $(this).on('click', function() {
+            $(this).after('<div class="yb_tennai"><iframe src="https://www.youtube.com/embed/'+id+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>').remove();
+          });
+        });
+      });
+    </script>
+
+    <!-- facebook用 -->
+    <div id="fb-root"></div>
+    <script defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v9.0" nonce="GT1a4hgN"></script>
+  </head>
+
+  <body>
+    <div id="app" class="columns"><!-- React --></div>
+    <!-- ナビのリンクをクリックしたら閉じる -->
+    <script type="text/javascript" defer>
+      $(".panel ul a").on('click', function(event) {
+        if ($('a').hasClass('menu menuOpen')) {
+          $("#menu").trigger("click");
+        }
+      });
+    </script>
+    
+  </body>
+</html>

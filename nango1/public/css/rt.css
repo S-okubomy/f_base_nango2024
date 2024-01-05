@@ -1,0 +1,289 @@
+/*--------------------
+ 吹き出しを作る
+--------------------*/
+/* 全体のスタイル */
+  .kaiwa {
+    margin-bottom: 40px;
+    background-color:#FCFCE0;
+  }
+  /* 左画像 */
+  .kaiwa-img-left {
+    margin: 0;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+  }
+  .kaiwa figure img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    margin: 0;
+  }
+  /* 画像の下のテキスト */
+  .kaiwa-img-description {
+    padding: 0;
+    font-size: 10px;
+    text-align: center;
+    width: 57px;
+  }
+  
+  /* 左からの吹き出しテキスト */
+  .kaiwa-text-right {
+    position: relative;
+    margin-left: 75px;
+    margin-right: 7px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #00ff80;
+  }
+  
+  p.kaiwa-text {
+    margin: 0 0 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    padding-bottom: 0px;
+    padding-right: 7px;
+    padding-left: 0px;
+  }
+  
+  p.kaiwa-text:last-child {
+    margin-bottom: 0;
+  }
+  
+  .kaiwa-text-right:after {
+    position: absolute;
+    content: '';
+    border: 10px solid transparent;
+    border-right: 10px solid #00ff80;
+    top: 15px;
+    left: -19px;
+  }
+  
+  /* 回り込み解除 */
+  .kaiwa:after,.kaiwa:before {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+  .kaiwa-text-right img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+  }
+
+  div.comment h1 {
+    margin: 0 0px;
+  }
+
+  div.comment ul li {
+    list-style-type:disc;
+    margin: 0 10px;
+    padding: 0 0;
+    border-bottom: none;
+  }
+
+  div.commentList img {
+    float: none;
+  }
+
+  div.comment p {
+    padding-bottom: 0px;
+  }
+
+  .kaiwa-text h1, .kaiwa-text h2 {
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  #react-paginate ul {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #react-paginate li {
+    display: inline-block;
+  }
+
+  /* 画像スライドショーの上書き用 */
+  .slick-next:before, .slick-prev:before {
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #0f0;
+  }
+
+  .slick-prev {
+    left: -10px;
+  }
+
+  .slick-next {
+    right: -10px;
+  }
+
+  #fixed-nango-ai {
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    right: 0; /* 基準の位置を画面の一番右に指定する */
+    width: 200px; /* 幅を指定する */
+    border: 3px solid #0b0b0c; /* ボーダーを指定する */
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* 以下はQaAi用のCSS */
+  .qa_iptxt {
+    position: relative;
+    width: 100%;
+    margin: 2px;
+  }
+  .qa_iptxt input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    /* color: #aaaaaa; */
+    border: 1px solid #1b2538;
+    border-radius: 4px;
+  }
+  .qa_iptxt_f {
+    width: 100%;
+  }
+  .qa_iptxt_f input[type='text']:focus {
+    border: 1px solid #da3c41;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+  }
+
+  .qa_button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 12pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 7px 7px;   /* 余白       */
+    background    : #1a1aff;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #1a1aff;    /* 枠の指定 */
+  }
+  .qa_button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #1a1aff;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+
+/* 以下はYoutube info用のCSS */
+.yb_nango_info{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height:17rem;
+  background: #eb0524;
+  padding:40px 20px;
+}
+.yb_nango_inner_mv{
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+.yb_nango_info::before, .yb_nango_info::after{
+  content: "";
+  position: absolute;
+  width:100%;
+  max-width: 100%;
+  height: 20px;
+  left: 0;
+  background:repeating-linear-gradient(90deg, #fff 0px, #fff 30px,#eb0524 30px,#eb0524 60px);
+}
+.yb_nango_info::before{
+  top:10px;
+}
+.yb_nango_info::after{
+  bottom:10px;
+}
+.yb_nango_info iframe {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 以下はキャプション用 */
+.cp_sv {
+  position: relative;
+  background: #f0c3ae;
+  padding: 0.3em;
+  border-radius: 0 5px 5px 5px;
+  color: #fff;
+  max-width: 300px;
+}
+.cp_sv:after {
+  position: absolute;
+  content: '\002713 サービス';
+  background: #008ac1;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: .1em .5em 0em .3em;
+  font-size: .5em;
+  letter-spacing: 0.05em;
+}
+
+.cp_seen {
+  position: relative;
+  background: #f0c3ae;
+  padding: 0.3em;
+  border-radius: 0 5px 5px 5px;
+  color: #fff;
+  max-width: 300px;
+}
+.cp_seen:after {
+  position: absolute;
+  content: '\002713 活用シーン';
+  background: #008ac1;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: .1em .5em 0em .3em;
+  font-size: .5em;
+  letter-spacing: 0.05em;
+}
+
+.cp_point {
+  position: relative;
+  background: #f0c3ae;
+  padding: 0.3em;
+  border-radius: 0 5px 5px 5px;
+  color: #fff;
+  max-width: 300px;
+}
+.cp_point:after {
+  position: absolute;
+  content: '\002713 ポイント';
+  background: #008ac1;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: .1em .5em 0em .3em;
+  font-size: .5em;
+  letter-spacing: 0.05em;
+}
+
+/* 以下南郷AI君浮遊css */
+#mv-nango-ai {
+  width: 150px; /* 幅を指定する */
+}
