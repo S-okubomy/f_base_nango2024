@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class YoutubeInfo extends React.Component {
   constructor(props) {
@@ -59,8 +60,8 @@ class YoutubeInfo extends React.Component {
               <h1 class="cp_seen" style={{ padding: "5px" }}>歌会、歓送迎会等の記念として</h1>
               <h1 class="cp_seen" style={{ padding: "5px" }}>社内行事、講演会等</h1>
 
-              <h1>&#x260e;<b>ご興味ある方は、お気軽に<a href="https://nango7.okbmk.com/nango/rt/info_nango_temp" target="_blank" rel="noopener noreferrer">
-                  お問い合わせ</a>下さい</b>
+              <h1>&#x260e;<b>ご興味ある方は、お気軽に
+                  <Link to="/nango/rt/info_nango_temp" ><span style={{ fontWeight: "bold", color: "blue" }} >お問い合わせ</span></Link>下さい</b>
               </h1>
             </li>
           </ul>

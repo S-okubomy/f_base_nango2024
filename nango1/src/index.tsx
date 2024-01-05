@@ -39,6 +39,7 @@ root.render(
             <div id="wrapper">
               <Routes>
                 <Route path="/" Component={Top} ></Route>
+                <Route path="/nango" Component={Top} ></Route>
                 <Route path="/nango/" Component={Top} ></Route>
                 <Route path="/nango/:id" Component={Top} ></Route>
                 {/* <Route path="/nango/rt/board_nango_temp" Render={() => <CommentBox url="get_board_cmt" pollInterval={20000} />}></Route> */}

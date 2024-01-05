@@ -156,8 +156,9 @@ class Top extends React.Component {
                   音楽活動等ができるよう応援したく考えております。<br/>
                   このような考えで、ライブ配信及び動画収録サービス<br/>
                   を開始いたしました。<br/>
-                  詳細は<a href="https://nango7.okbmk.com/nango/rt/youtube_info_nango_temp" target="_blank" rel="noopener noreferrer">
-                  こちら</a>をご覧ください。
+                  詳細は
+                  <Link to="/nango/rt/youtube_info_nango_temp" ><span style={{ fontWeight: "bold", color: "blue" }} >こちら</span></Link>
+                  をご覧ください。
               </li>
               <li>
                   <span style={{ fontSize: "20px", fontWeight: "bold", color: "blue" }} >＜衛生対策に関しまして＞</span><br/>
@@ -190,7 +191,8 @@ class Top extends React.Component {
             </ul>
           </section>
 
-          <div dangerouslySetInnerHTML={this.getHtml()}></div>
+          {/*　一時的に無効にする　*/}
+          {/* <div dangerouslySetInnerHTML={this.getHtml()}></div>    */}
 
           <section>
             <ul className="post">

@@ -1,3 +1,5 @@
+// Not used
+
 import React, {lazy,Suspense} from "react";
 import ReactDOM from "react-dom";
 import Header from './common/Header';

@@ -46,12 +46,13 @@ class Header extends React.Component {
                 <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong><span>Events</span></Link></li>
                 <li><a href="/nango/rt/play_music_info_nango_temp" target="_blank"><strong>ツール</strong><span>tool</span></a>
                   <ul className="sub-menu">
-                    <li><Link to="/nango/rt/board_nango_temp">掲示板</Link></li>
+                    <li><Link to="/nango">利用できません</Link></li>
+                    {/* <li><Link to="/nango/rt/board_nango_temp">掲示板</Link></li>
                     <li><a href="/board">掲示板（TEC）</a></li>
                     <li><Link to="/nango/rt/qa_by_ai_temp">AI 南郷君</Link></li>
                     <li><Link to="/nango/rt/make_music_melo_temp">メロ作成</Link></li>
                     <li><Link to="/nango/rt/play_music_info_nango_temp">楽曲一覧!!</Link></li>
-                    <li><a href="/nango/rec_music">お勧め曲 検索</a></li>
+                    <li><a href="/nango/rec_music">お勧め曲 検索</a></li> */}
                   </ul>
                 </li>
               </ul>

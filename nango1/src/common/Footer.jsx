@@ -8,7 +8,7 @@ class Footer extends React.Component {
   render() {  
     return (
       <footer id="footer">
-        <p id="copyright">&copy;2019-2023 okbmsyk. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow" style={{ textDecoration: "underline" }} >http://f-tpl.com</a></p>
+        <p id="copyright">&copy;2019-2024 okbmsyk. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow" style={{ textDecoration: "underline" }} >http://f-tpl.com</a></p>
       </footer>
     );
   };
