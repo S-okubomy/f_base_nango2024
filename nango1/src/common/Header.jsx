@@ -19,16 +19,18 @@ class Header extends React.Component {
             <img src="/static/hp_nango/images/header.jpg" alt="" width="880" height="256" />
         </div>
 
-        <h2 className="title" style={{ background: "#FCFCE0" }}>
-          <li><Link to="/nango"><strong>トップページ</strong><span>TOP</span></Link></li>
-          <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
-          <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
-          <li><Link to="/nango/rt/system_nango_temp">ご利用方法</Link></li>
-          <li><Link to="/nango/rt/party_nango_temp">宴会プラン</Link></li>
-          <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
-          <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
-          <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong><span>Events</span></Link></li>
-        </h2>
+        <div className="inner">
+          <h2 className="title" style={{ background: "#FCFCE0" }}>
+            <li><Link to="/nango"><strong>トップページ</strong></Link></li>
+            <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
+            <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
+            <li><Link to="/nango/rt/system_nango_temp">ご利用方法</Link></li>
+            <li><Link to="/nango/rt/party_nango_temp">宴会プラン</Link></li>
+            <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
+            <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
+            <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong></Link></li>
+          </h2>
+        </div>
 
         {/* <nav id="mainNav" name="mainNav">
           <div className="inner">
