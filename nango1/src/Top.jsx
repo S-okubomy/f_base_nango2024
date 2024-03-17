@@ -2,11 +2,11 @@ import React from "react";
 import DOMPurify from "dompurify";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore"; 
 // import Typed from 'react-typed';
 // import ReactAnime from 'react-animejs';
 // import AnimeNangoAi from "./common/AnimeNangoAi";
 
+import { collection, addDoc, doc, setDoc, getDoc, query, where, orderBy, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
 // const {Anime, stagger} = ReactAnime
@@ -21,6 +21,8 @@ class Top extends React.Component {
         selectedPage: 0,
         qa_infos: [],
         isLoadedTopAI: false,
+        top_infos: [],
+        isLoadedTopInfo: false,
       };
       this.loadTopInfo = this.loadTopInfo.bind(this);
       // this.getHtml = this.getHtml.bind(this);
@@ -28,6 +30,31 @@ class Top extends React.Component {
     }
   
     async loadTopInfo() {
+
+      // const q = query(collection(db, "cities"), where("capital", "==", true));
+      const q = query(
+          collection(db, "top_info")
+        , where("is_del", "==", false)
+        , orderBy("created_time","desc")
+      );
+
+      let infos = []
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        infos.push(doc.data())
+        // console.log(doc.data());
+      });
+
+      this.setState({
+        top_infos: infos,
+        isLoadedTopInfo: true,
+      });
+
+
+
+
+
       // try {
       //   console.log("2xx test Document written");
 
@@ -105,7 +132,7 @@ class Top extends React.Component {
     }
 
     componentDidMount() {
-      // this.loadTopInfo();
+      this.loadTopInfo();
       // this.getTopAiComment();
     }
 
@@ -125,6 +152,29 @@ class Top extends React.Component {
         autoplaySpeed: 5000,
         arrows:true,
       };
+
+      const cnvLine = (msg) => {
+        const texts = msg.split("\n").map((item, index) => {
+          return (
+            <React.Fragment key={index}>{item}<br /></React.Fragment>
+          );
+        });
+        return <div>{texts}</div>;
+      }
+
+      const top_info_nodes = this.state.top_infos.map((info, ind) => {
+        return (
+          <div key={ind}>
+            <p>
+              <span style={{ fontSize: "13px", fontWeight: "bold" }}>
+                {info.title}<br/>
+              </span>
+              {cnvLine(info.content)}
+            </p>
+            <hr/>
+          </div>
+        )
+      });
 
       return (
         <div id="content">
@@ -232,6 +282,19 @@ class Top extends React.Component {
           {/*　一時的に無効にする　*/}
           {/* <div dangerouslySetInnerHTML={this.getHtml()}></div>    */}
 
+          {/* TODO */}
+          <section>
+            <h2 className="title">■“南郷７丁目”からのお知らせ■　　
+              <button className="second"><a href="xxxx" target="_blank">投稿（管理者）</a></button>
+            </h2>
+            <ul className="post">
+              <br/>
+              { this.state.isLoadedTopInfo &&
+                top_info_nodes
+              }
+            </ul>
+          </section>
+          
           <section>
             <ul className="post">
               <Link to="/nango/rt/event_nango_temp" ><img src="/static/hp_nango/images/event.jpg" alt="イベントカレンダー" width="100%" style={{ margin: "0px" }} /></Link>

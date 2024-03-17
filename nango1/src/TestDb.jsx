@@ -1,57 +1,56 @@
 import { useState, useEffect } from "react";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs, doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 
 
 function TestDb() {
-    const [first, setFrist] = useState("");
-    const [user, setUser] = useState("");
-
-
-    // useEffect(() => {
-
-    //     try {
-    //         const docRef = addDoc(collection(db, "users"), {
-    //                 first,
-    //                 user,
-    //                 born: 1815
-    //         });
-    //         console.log("Document TE written with ID: ", docRef.id);
-    //     } catch (error) {
-    //         console.log("err!!: " + error);
-    //     }
-
-    //     const usersCollectionRef = collection(db, 'users');
-    //     getDocs(usersCollectionRef).then((querySnapshot) => {
-    //     console.log(querySnapshot);
-    //     });
-    // }, []);
-
-    // useEffect(() => {
-    //     const usersCollectionRef = collection(db, 'users');
-    //     getDocs(usersCollectionRef).then((querySnapshot) => {
-    //       querySnapshot.docs.forEach((doc) => console.log(doc));
-    //     });
-    //   }, []);
-
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(first);
+        // console.log(first);
 
         try {
-            const docRef = await addDoc(collection(db, "users"), {
-                    first,
-                    user,
-                    born: 1815
+            const top_info_Ref = await addDoc(collection(db, "top_info"), {
+                title,
+                content,
+                created_time: new Date(),
+                is_del: false,
             });
+            
+
 
             console.log("Document TE written with ID: ", docRef.id);
         } catch (error) {
             console.log("err!!: " + error);
         }
-    };
+
+        const citiesRef = collection(db, "cities");
+
+        await setDoc(doc(citiesRef, "SF"), {
+            name: "San Francisco", state: "CA", country: "USA",
+            capital: false, population: 860000,
+            regions: ["west_coast", "norcal"] });
+        await setDoc(doc(citiesRef, "LA"), {
+            name: "Los Angeles", state: "CA", country: "USA",
+            capital: false, population: 3900000,
+            regions: ["west_coast", "socal"] });
+
+
+        const docRef = doc(db, "cities", "SF");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+        } else {
+            // docSnap.data() will be undefined in this case
+            console.log("No such document!");
+        }
+
+    
+    }
+        
 
     return (
         <div>
@@ -59,13 +58,13 @@ function TestDb() {
                 <label htmlFor="first">Input here</label>
                 <input
                     type="text"
-                    id="first"
-                    onChange={(e) => setFrist(e.target.value)}
+                    id="title"
+                    onChange={(e) => setTitle(e.target.value)}
                 />
                 <input
                     type="text"
-                    id="user"
-                    onChange={(e) => setUser(e.target.value)}
+                    id="content"
+                    onChange={(e) => setContent(e.target.value)}
                 />
                 <button type="submit">
                     Submit
