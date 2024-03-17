@@ -285,7 +285,7 @@ class Top extends React.Component {
           {/* TODO */}
           <section>
             <h2 className="title">■“南郷７丁目”からのお知らせ■　　
-              <button className="second"><a href="/nango/rt/regdb_top_info" target="_blank">投稿（管理者）</a></button>
+              <button className="second"><Link to="/nango/rt/regdb_top_info"><strong>投稿（管理者）</strong></Link></button>
             </h2>
             <ul className="post">
               <br/>
