@@ -21,7 +21,7 @@ class Header extends React.Component {
 
         <div className="inner">
           <h2 className="title" style={{ background: "#FCFCE0" }}>
-            <li><Link to="/nango"><strong>トップページ</strong></Link></li>
+            <li><Link to="/"><strong>トップページ</strong></Link></li>
             <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
             <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
             <li><Link to="/nango/rt/system_nango_temp">ご利用方法</Link></li>
@@ -29,6 +29,8 @@ class Header extends React.Component {
             <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
             <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
             <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong></Link></li>
+            <li><Link to="/nango/rt/info_reg"><strong>test</strong></Link></li>
+            <li><Link to="/nango/rt/test_db"><strong>test-db</strong></Link></li>
           </h2>
         </div>
 

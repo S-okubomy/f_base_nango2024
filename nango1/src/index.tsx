@@ -23,7 +23,10 @@ const Food = lazy(() => import('./Food'));
 const Event = lazy(() => import('./Event'));
 const PlayMusicInfo = lazy(() => import('./PlayMusicInfo'));
 const QaByAi = lazy(() => import('./QaByAi'));
+const InfoReg = lazy(() => import('./InfoReg'));
 // const MakeMusicMelo = lazy(() => import('./MakeMusicMelo'));
+const TestDb = lazy(() => import('./TestDb'));
+
 const LoadingComponent  = () => <div>Loading...</div>
 
 const container = document.getElementById("app")!;
@@ -52,6 +55,8 @@ root.render(
                 <Route path="/nango/rt/play_music_info_nango_temp" Component={PlayMusicInfo} ></Route>
                 {/* <Route path="/nango/rt/test_temp" render={() => <h1>皆様よろしくお願いします&#x1f647;</h1>}></Route> */}
                 <Route path="/nango/rt/qa_by_ai_temp" Component={QaByAi} ></Route>
+                <Route path="/nango/rt/info_reg" Component={InfoReg} ></Route>
+                <Route path="/nango/rt/test_db" Component={TestDb} ></Route>
                 {/* <Route path="/nango/rt/make_music_melo_temp" Component={MakeMusicMelo} ></Route> */}
               </Routes>
               <Sidebar />

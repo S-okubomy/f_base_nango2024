@@ -12,7 +12,10 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  databaseURL: "https://my-test1-c40e5.firebaseio.com",
 };
+
+console.log(process.env.REACT_APP_PROJECTID)
 
 const app: FirebaseApp = initializeApp(firebaseConfig);
 export const auth: Auth = getAuth();

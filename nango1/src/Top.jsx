@@ -2,9 +2,12 @@ import React from "react";
 import DOMPurify from "dompurify";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore"; 
 // import Typed from 'react-typed';
 // import ReactAnime from 'react-animejs';
 // import AnimeNangoAi from "./common/AnimeNangoAi";
+
+import { db } from "./firebase";
 
 // const {Anime, stagger} = ReactAnime
 
@@ -19,28 +22,61 @@ class Top extends React.Component {
         qa_infos: [],
         isLoadedTopAI: false,
       };
-      // this.loadTopInfo = this.loadTopInfo.bind(this);
+      this.loadTopInfo = this.loadTopInfo.bind(this);
       // this.getHtml = this.getHtml.bind(this);
       // this.getTopAiComment = this.getTopAiComment.bind(this);
     }
   
-    loadTopInfo() {
-      fetch("/nango/top_cont")
-      .then(res => res.text())
-      .then(
-        (htmlDate) => {
-          this.setState({
-            isLoaded: true,
-            topCont: htmlDate,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+    async loadTopInfo() {
+      // try {
+      //   console.log("2xx test Document written");
+
+      //   const docRef = await addDoc(collection(db, "users"), {
+      //     first: "Ada",
+      //     last: "Lovelace",
+      //     born: 1815
+      //   });
+      //   console.log("Document TE written with ID: ", docRef.id);
+      // } catch (e) {
+      //   console.error("Error adding document: ", e);
+      // }
+
+
+
+      // console.log("test Document written");
+
+      // try {
+      //   console.log("2xx test Document written");
+
+      //   const docRef = await addDoc(collection(db, "users"), {
+      //     first: "Ada",
+      //     last: "Lovelace",
+      //     born: 1815
+      //   });
+      //   console.log("Document TE written with ID: ", docRef.id);
+      // } catch (e) {
+      //   console.error("Error adding document: ", e);
+      // }
+
+
+      // fetch("/nango/top_cont")
+      // .then(res => res.text())
+      // .then(
+      //   (htmlDate) => {
+      //     this.setState({
+      //       isLoaded: true,
+      //       topCont: htmlDate,
+      //     });
+      //   },
+      //   (error) => {
+      //     this.setState({
+      //       isLoaded: true,
+      //       error
+      //     });
+      //   }
+      // )
+
+
     }
 
     // AI南郷君のお話取得
