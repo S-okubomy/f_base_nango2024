@@ -29,8 +29,9 @@ class Header extends React.Component {
             <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
             <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
             <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong></Link></li>
-            <li><Link to="/nango/rt/info_reg"><strong>test</strong></Link></li>
-            <li><Link to="/nango/rt/test_db"><strong>test-db</strong></Link></li>
+            {/* <li><Link to="/nango/rt/info_reg"><strong>test</strong></Link></li> */}
+            <li><Link to="/nango/rt/regdb_top_info"><strong>管理用</strong></Link></li>
+            {/* <li><Link to="/nango/rt/login"><strong>login</strong></Link></li> */}
           </h2>
         </div>
 
