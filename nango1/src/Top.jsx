@@ -30,8 +30,6 @@ class Top extends React.Component {
     }
   
     async loadTopInfo() {
-
-      // const q = query(collection(db, "cities"), where("capital", "==", true));
       const q = query(
           collection(db, "top_info")
         , where("is_del", "==", false)
@@ -50,60 +48,6 @@ class Top extends React.Component {
         top_infos: infos,
         isLoadedTopInfo: true,
       });
-
-
-
-
-
-      // try {
-      //   console.log("2xx test Document written");
-
-      //   const docRef = await addDoc(collection(db, "users"), {
-      //     first: "Ada",
-      //     last: "Lovelace",
-      //     born: 1815
-      //   });
-      //   console.log("Document TE written with ID: ", docRef.id);
-      // } catch (e) {
-      //   console.error("Error adding document: ", e);
-      // }
-
-
-
-      // console.log("test Document written");
-
-      // try {
-      //   console.log("2xx test Document written");
-
-      //   const docRef = await addDoc(collection(db, "users"), {
-      //     first: "Ada",
-      //     last: "Lovelace",
-      //     born: 1815
-      //   });
-      //   console.log("Document TE written with ID: ", docRef.id);
-      // } catch (e) {
-      //   console.error("Error adding document: ", e);
-      // }
-
-
-      // fetch("/nango/top_cont")
-      // .then(res => res.text())
-      // .then(
-      //   (htmlDate) => {
-      //     this.setState({
-      //       isLoaded: true,
-      //       topCont: htmlDate,
-      //     });
-      //   },
-      //   (error) => {
-      //     this.setState({
-      //       isLoaded: true,
-      //       error
-      //     });
-      //   }
-      // )
-
-
     }
 
     // AI南郷君のお話取得

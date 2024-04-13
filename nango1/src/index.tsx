@@ -26,6 +26,7 @@ const QaByAi = lazy(() => import('./QaByAi'));
 const InfoReg = lazy(() => import('./InfoReg'));
 // const MakeMusicMelo = lazy(() => import('./MakeMusicMelo'));
 const RegDbTopInfo = lazy(() => import('./RegDbTopInfo'));
+const EditInfoList = lazy(() => import('./EditInfoList'));
 const Login = lazy(() => import('./Login'));
 
 const LoadingComponent  = () => <div>Loading...</div>
@@ -58,6 +59,7 @@ root.render(
                 <Route path="/nango/rt/qa_by_ai_temp" Component={QaByAi} ></Route>
                 <Route path="/nango/rt/info_reg" Component={InfoReg} ></Route>
                 <Route path="/nango/rt/regdb_top_info" Component={RegDbTopInfo} ></Route>
+                <Route path="/nango/rt/edit_info" Component={EditInfoList} ></Route>
                 <Route path="/nango/rt/login" Component={Login} ></Route>
                 {/* <Route path="/nango/rt/make_music_melo_temp" Component={MakeMusicMelo} ></Route> */}
               </Routes>
