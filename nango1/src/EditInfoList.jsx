@@ -112,8 +112,10 @@ function RegDbTopInfo() {
             // ログインしていれば、編集画面を表示
             <>
               <section>
-                <h2 className="title">■編集用　　<button onClick={logout}>ログアウト</button></h2>
+                <h2 className="title">■編集用&nbsp;&nbsp;<button onClick={logout}>ログアウト</button></h2>
                 <ul className="post">
+                  <Link to="/nango/rt/edit_info"><strong>★編集一覧画面</strong></Link>&nbsp;&nbsp;
+                  <Link to="/nango/rt/regdb_top_info"><strong>★登録/更新画面</strong></Link>
                   <br/>
                   { loadedEditTopInfo &&
                     top_info_nodes

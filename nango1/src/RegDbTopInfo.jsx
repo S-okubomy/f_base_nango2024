@@ -1,12 +1,13 @@
 import { useState, useEffect, Fragment } from "react";
-import { collection, addDoc, getDocs, doc, setDoc, getDoc, serverTimestamp, query, where, orderBy } from "firebase/firestore";
+import { collection, addDoc, getDocs, doc, setDoc, getDoc, serverTimestamp, query, where, orderBy, updateDoc, deleteDoc } from "firebase/firestore";
 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { db, auth } from "./firebase";
 import {
   useNavigate,
   Navigate,
-  useLocation
+  useLocation,
+  Link
 } from "react-router-dom";
 
 function RegDbTopInfo() {
@@ -15,9 +16,15 @@ function RegDbTopInfo() {
   const [user, setUser] = useState("");
   const [loaded, setLoaded] = useState(false);
 
-  // 編集データ取得用
-  const [editTopInfos, setEditTopInfos] = useState([]);
-  const [loadedEditTopInfo, setLoadedEditTopInfo] = useState(true);
+  // 登録/更新フォーム用
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [isDel, setIsDel] = useState(false);
+  const [isDbDel, setIsDbDel] = useState(false);
+
+  // 更新確認用
+  const location = useLocation();
+  const updateFlag = location.state && location.state.ref_id ? true : false;
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -25,7 +32,11 @@ function RegDbTopInfo() {
       setLoaded(true);
     });
 
-    loadTopEditInfo();
+    if (updateFlag) {
+      console.log("ref_id: " + location.state.ref_id)
+      loadTopEditInfo(location.state.ref_id);
+    }
+
   }, []);
 
   // ログアウト用
@@ -35,78 +46,80 @@ function RegDbTopInfo() {
     navigate("/nango/rt/login");
   }
 
-  const loadTopEditInfo = async () => {
-    const q = query(
-        collection(db, "top_info")
-      // , where("is_del", "==", false)
-      , orderBy("created_time","desc")
-    );
-
-    let infos = []
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      infos.push(doc.data())
-      // console.log(doc.data());
-    });
-
-    setEditTopInfos(infos);
-    setLoadedEditTopInfo(true);
+  const loadTopEditInfo = async (refId) => {
+    const docRef = doc(db, "top_info", refId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      let data = docSnap.data();
+      setTitle(data.title);
+      setContent(data.content);
+      setIsDel(data.is_del);
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
   }
-
-  const cnvLine = (msg) => {
-    const texts = msg.split("\n").map((item, index) => {
-      return (
-        <Fragment key={index}>{item}<br/></Fragment>
-        // <React.Fragment key={index}>{item}<br /></React.Fragment>
-      );
-    });
-    return <div>{texts}</div>;
-  }
-
-  const top_info_nodes = editTopInfos.map((info, ind) => {
-    return (
-      <div key={ind}>
-        <p>
-          <span style={{ fontSize: "13px", fontWeight: "bold" }}>
-            {info.title}<br/>
-          </span>
-          {cnvLine(info.content)}
-        </p>
-        <hr/>
-      </div>
-    )
-  });
-
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
 
   const onSubmit = async (e) => {
       e.preventDefault();
 
-      try {
-          const top_info_Ref = await addDoc(collection(db, "top_info"), {
-              title,
-              content,
-              created_time: serverTimestamp(),
-              is_del: false,
-          });
-          
-          console.log("Document written with ID: ", top_info_Ref.id);
-      } catch (error) {
-          console.log("err!!: " + error);
+      if (updateFlag) {
+        let res1 = window.confirm('本当に内容を更新しますか？');
+        if (res1) {
+          updateDB();
+          alert("内容を更新しました。")
+          if (isDbDel) {
+            let res2 = window.confirm('データベースから削除します。削除すると復元できません。本当に削除しますか？');
+            if (res2) {
+              deleteDB();
+            } else {
+              alert("削除処理はキャンセルしました。")
+            }
+          }
+        } else {
+          alert("処理をキャンセルしました。")
+        }
+      } else {
+        let res3 = window.confirm('本当に内容を登録しますか？');
+        if (res3) {
+          insertDB();
+          alert("内容を登録しました。")
+        } else {
+          alert("処理をキャンセルしました。")
+        }
       }
-  
   }
 
-  const location = useLocation();
-  const updateFlag = location.state ? true : false;
-  // if (location.state) {
-  //   const { ref_id } = location.state;
+  const updateDB = async () => {
+    const top_info_Ref = doc(db, "top_info", location.state.ref_id);
+    await updateDoc(top_info_Ref, {
+      title,
+      content,
+      created_time: serverTimestamp(),
+      is_del: isDel,
+    });
+    console.log("Document updated with ID: ", top_info_Ref.id);
+  }
 
-  //   // urlパラメータにidがある場合は更新画面、そうでない場合は登録画面とする
-  //   const updateFlag = location.state !== null ? true : false;
-  //   console.log(updateFlag);
-  // }
+  const insertDB = async () => {
+    try {
+      const top_info_Ref = await addDoc(collection(db, "top_info"), {
+          title,
+          content,
+          created_time: serverTimestamp(),
+          is_del: false,
+      });
+      
+      console.log("Document written with ID: ", top_info_Ref.id);
+    } catch (error) {
+        console.log("err!!: " + error);
+    }
+  }
+
+  const deleteDB = async () => {
+    await deleteDoc(doc(db, "top_info", location.state.ref_id));
+    console.log("Document delete");
+  }
 
   // TODO 
 
@@ -122,54 +135,60 @@ function RegDbTopInfo() {
             // ログインしていれば、DB登録画面を表示
             <>
               <section>
-                <h2 className="title">■南郷７丁目”からのお知らせの登録　　<button onClick={logout}>ログアウト</button></h2>
-                {/* {ref_id} */}
-                
+                <h2 className="title">■南郷７丁目”からのお知らせの{updateFlag ? "編集" : "登録"}&emsp;<button onClick={logout}>ログアウト</button></h2>
                 <ul className="post">
-                <form onSubmit={onSubmit}>
-                  <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                    <label htmlFor="title">タイトル</label>
-                  </div>
-                  <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                    <input
-                        type="text"
-                        id="title"
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                  </div>
-                  <br/>
-                  <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                    <label htmlFor="content">お知らせ内容</label>
-                  </div>
-                  <br/>
-                  <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                    <textarea
-                        type="text"
-                        id="content"
-                        onChange={(e) => setContent(e.target.value)}
-                    />
-                  </div>
-                  <br/>
-                  <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                    <button type="submit">登録</button>
-                  </div>
-                </form>
+                  <Link to="/nango/rt/edit_info"><strong>★編集一覧画面</strong></Link>&nbsp;&nbsp;
+                  <Link to="/nango/rt/regdb_top_info"><strong>★登録/更新画面</strong></Link>
+                  <form onSubmit={onSubmit}>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <label htmlFor="title">タイトル</label>
+                    </div>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <input
+                          type="text"
+                          id="title"
+                          onChange={(e) => setTitle(e.target.value)}
+                          value={title}
+                      />
+                    </div>
+                    <br/>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <label htmlFor="content">お知らせ内容</label>
+                    </div>
+                    <br/>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <textarea
+                          type="text"
+                          id="content"
+                          onChange={(e) => setContent(e.target.value)}
+                          value={content}
+                      />
+                    </div>
+                    <br/>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <input 
+                        type="checkbox" 
+                        checked={isDel} 
+                        onChange={(e) => setIsDel(e.target.checked)}
+                      />
+                      {' '} <label htmlFor="content">一覧から非表示</label>
+                    </div>
+                    <br/>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <input 
+                        type="checkbox" 
+                        checked={isDbDel} 
+                        onChange={(e) => setIsDbDel(e.target.checked)}
+                      />
+                      {' '} <label htmlFor="content">データベースから削除</label>
+                    </div>
+                    <br/>
+                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                      <button type="submit">{updateFlag ? "編集" : "登録"}</button>
+                    </div>
+                  </form>
                 </ul>
-
-
-                
               </section>
-
-              {/* <section>
-                <h2 className="title">■編集用</h2>
-                <ul className="post">
-                  <br/>
-                  { loadedEditTopInfo &&
-                    top_info_nodes
-                  }
-                </ul>
-              </section> */}
-
             </>
           )}
         </>
