@@ -63,99 +63,15 @@ class InfoReg extends React.Component {
     async postComment(comment) {
       try {
         console.log("2xx test Document written");
-        
-
-        // try {
-        //   const docRef = await addDoc(collection(db, "users"), {
-        //     first: "Ada",
-        //     last: "Lovelace",
-        //     born: 1815
-        //   });
-        //   console.log("Document written with ID: ", docRef.id);
-        // } catch (e) {
-        //   console.error("Error adding document: ", e);
-        // }
-
-        // db.collection("test1").add({
-        //   test: "xx-Lovelace",
-        // });
-
-        // await addDoc(collection(db, "test posts"), {
-        //   text: "Ada",
-        //   timestamp: new Date(),
-        // });
-        
-        // const docId = db.collection("members").doc().id;
-
-        // const docRef = await addDoc(collection(db, "users"), {
-        //   first: "Ada",
-        //   last: "Lovelace",
-        //   born: 1815
-        // });
-
+ 
         const querySnapshot = await getDocs(collection(db, "users"));
         querySnapshot.forEach((doc) => {
           console.log(`${doc.id} => ${doc.data()}`);
         });
 
-        // const docRef = addDoc(collection(db, "users"), {
-        //   first: "Ada",
-        //   last: "Lovelace",
-        //   born: 1815
-        // })
-        // .then(
-        //   (resJson) => {
-        //     console.log("Document TE written with ID: ", resJson);
-        //   },
-        //   (error) => {
-        //     console.error("Error test adding document: ", error);
-        //   }
-        // )
-
-        // console.log("Document test written with ID: ");
-        // console.log("Document TE written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-
-
-
-
-      // let formData = new FormData();
-      // formData.append('author', comment["author"]);
-      // formData.append('content', comment["content"]);
-      // formData.append('selectedPage', this.state.selectedPage + 1); // 0から始まるので渡す時は1を足す
-      // formData.append('pageLimit', this.state.pageLimit);
-
-      // fetch('ai_qa_nango', {
-      //   method: 'POST',
-      //   body: formData,
-      //   headers: new Headers({
-      //     'X-CSRFToken': Cookies.get('csrftoken')
-      //   })
-      // })
-      // .then(res => res.json())
-      // .then(
-      //   (resJson) => {
-      //     this.setState({
-      //       qa_infos: resJson["qa_infos"],
-      //       isLoaded: true,
-      //     });
-      //     this.CommentFormRef.current.initCommentForm(); // this.ref名.currentで実体にアクセス
-      //   },
-      //   (error) => {
-      //     this.setState({
-      //       isLoaded: true,
-      //       error,
-      //       commentItem: {
-      //         author: '',
-      //         content: '',
-      //       },
-      //     });
-      //   }
-      // )
-
-
     }
 
     // 子コンポーネントから実行されるメソッド

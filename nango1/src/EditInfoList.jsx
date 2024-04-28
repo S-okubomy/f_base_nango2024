@@ -57,7 +57,6 @@ function RegDbTopInfo() {
     const texts = msg.split("\n").map((item, index) => {
       return (
         <Fragment key={index}>{item}<br/></Fragment>
-        // <React.Fragment key={index}>{item}<br /></React.Fragment>
       );
     });
     return <div>{texts}</div>;

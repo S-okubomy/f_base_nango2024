@@ -11,7 +11,7 @@ class Event extends React.Component {
         <section>
           <h2 className="title"><span style={{ fontSize: "15px", fontWeight: "bold" }} >■イベントカレンダー■</span></h2>
           <ul className="post">
-            <iframe src="https://freecalend.com/open/mem108709_nopopon" style={{ border: "solid 1px #777"}} width="880" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://freecalend.com/open/mem108709_nopopon" style={{ border: "solid 1px #777"}} width="880" height="600" frameBorder="0" scrolling="no"></iframe>
           </ul>
         </section>
 

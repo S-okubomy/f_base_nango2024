@@ -2,14 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './bk2-App';
+import Event from './Event';
 
 test('renders learn react link', () => {
   const { getByText } = render(
     <Provider store={store}>
-      {/* <App /> */}
+      <Event />
     </Provider>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  // console.log(getByText('■イベントカレンダー■'));
+
+  expect(getByText('■イベントカレンダー■')).toBeInTheDocument();
 });
