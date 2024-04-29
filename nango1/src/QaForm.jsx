@@ -44,7 +44,7 @@ class QaForm extends React.Component {
   
     render() {
       return (
-        <form className="commentForm" enctype="multipart/form-data" onSubmit={this.handleSubmit}>
+        <form className="commentForm" encType="multipart/form-data" onSubmit={this.handleSubmit}>
           <div style={{ marginBottom: "5px", textAlign: "right" }}>
             <div className="qa_iptxt">
               <label className="qa_iptxt_f">
@@ -53,7 +53,7 @@ class QaForm extends React.Component {
               </label>
             </div>
             
-            <input type='submit' value='質問する' required class="qa_button" />
+            <input type='submit' value='質問する' required className="qa_button" />
 
             {/* 本当は material-uiを使いたいが、テキストボックスに不具合あるため使わない*/}
               {/* <TextField required id="outlined-required" label="ご質問入力してください。" variant="filled" fullWidth

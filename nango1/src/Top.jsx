@@ -26,7 +26,8 @@ class Top extends React.Component {
       };
       this.loadTopInfo = this.loadTopInfo.bind(this);
       // this.getHtml = this.getHtml.bind(this);
-      // this.getTopAiComment = this.getTopAiComment.bind(this);
+      this.getTopAiComment = this.getTopAiComment.bind(this);
+      // console.log()
     }
   
     async loadTopInfo() {
@@ -52,32 +53,39 @@ class Top extends React.Component {
 
     // AI南郷君のお話取得
     getTopAiComment() {
-      const params = { // 渡したいパラメータをJSON形式で書く
-        eventKey: "aiTopCom",
-      };
+      // const params = { // 渡したいパラメータをJSON形式で書く
+      //   eventKey: "aiTopCom",
+      // };
 
-      const query_params = new URLSearchParams(params);
-      fetch("/nango/top_nango_ai_com" + "?" + query_params)
-      .then(res => res.json())
-      .then(
-        (resJson) => {
-          this.setState({
-            qa_infos: resJson["qa_infos"],
-            // isLoadedTopAI: true, // TODO 一旦無効化しているので戻す
-          });
-        },
-        (error) => {
-          this.setState({
-            // isLoadedTopAI: true,　// TODO 一旦無効化しているので戻す
-            error,
-          });
-        }
-      )
+      // const query_params = new URLSearchParams(params);
+      // // fetch("/nango/top_nango_ai_com" + "?" + query_params)
+      // fetch("https://g2l6vmjobj.execute-api.ap-northeast-1.amazonaws.com/nango_ai_220717?mode=p&que_sentence=今日の天気を教えて&pkey=nango7_ai_nango_kun", {
+      //   mode: 'cors'
+      // })
+      // .then(res => res.json())
+      // .then(
+      //   (resJson) => {
+      //     this.setState({
+      //       qa_infos: resJson["payload"]["qa_infos"],
+      //       isLoadedTopAI: true, // TODO 一旦無効化しているので戻す
+      //     });
+      //     console.log(this.state.qa_infos);
+      //   },
+      //   (error) => {
+      //     this.setState({
+      //       // isLoadedTopAI: true,　// TODO 一旦無効化しているので戻す
+      //       error,
+      //     });
+      //   }
+      // )
+
+       
+
     }
 
     componentDidMount() {
       this.loadTopInfo();
-      // this.getTopAiComment();
+      this.getTopAiComment();
     }
 
     getHtml() {

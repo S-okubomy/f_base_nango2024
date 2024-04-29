@@ -8,9 +8,9 @@ class QaList extends React.Component {
     }
   
     render() {
-      const commentNodes = this.props.qa_infos.map((comment) => {
+      const commentNodes = this.props.qa_infos.map((comment, ind) => {
         return (
-          <div className="kaiwa">
+          <div className="kaiwa" key={ind}>
             <figure className="kaiwa-img-left">
               <Link to="/nango/rt/test_temp">
                 <img src="/static/hp_nango/images/favicon.ico"/>
