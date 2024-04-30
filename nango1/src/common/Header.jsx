@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HeaderAppbar from "./HeaderAppbar";
 
 class Header extends React.Component {
   constructor(props) {
@@ -19,22 +20,25 @@ class Header extends React.Component {
             <img src="/static/hp_nango/images/header.jpg" alt="" width="880" height="256" />
         </div>
 
+        
+
         <div className="inner">
+          
+
           <h2 className="title" style={{ background: "#FCFCE0" }}>
-            <li><Link to="/"><strong>トップページ</strong></Link></li>
+            <HeaderAppbar/>
+
+            {/* <li><Link to="/"><strong>トップページ</strong></Link></li>
             <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
             <li><Link to="/nango/rt/youtube_info_nango_temp">配信&amp;収録</Link></li>
             <li><Link to="/nango/rt/system_nango_temp">ご利用方法</Link></li>
             <li><Link to="/nango/rt/party_nango_temp">宴会プラン</Link></li>
             <li><Link to="/nango/rt/drink_nango_temp">飲み物</Link></li>
             <li><Link to="/nango/rt/food_nango_temp">お食事</Link></li>
-            <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong></Link></li>
+            <li><Link to="/nango/rt/event_nango_temp"><strong>イベントカレンダー</strong></Link></li> */}
             {/* <li><Link to="/nango/rt/info_reg"><strong>test</strong></Link></li> */}
-            <li><Link to="/nango/rt/regdb_top_info"><strong>管理用</strong></Link></li>
-
-            <li><Link to="/nango/rt/qa_by_ai_temp"><strong>AI南郷君</strong></Link></li>
-
-            
+            {/* <li><Link to="/nango/rt/regdb_top_info"><strong>管理用</strong></Link></li>
+            <li><Link to="/nango/rt/qa_by_ai_temp"><strong>AI南郷君</strong></Link></li> */}
             {/* <li><Link to="/nango/rt/login"><strong>login</strong></Link></li> */}
           </h2>
         </div>
