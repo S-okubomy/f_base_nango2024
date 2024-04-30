@@ -76,21 +76,43 @@ function HeaderAppbar() {
               textDecoration: 'none',
               }}
           >
-              <span style={{ fontSize: "10px", color: "inherit" }}>メニュー</span>
+            <Link to="/"><span style={{ fontSize: "10px", color: "white" }}>メニュー</span></Link>
+              {/* <span style={{ fontSize: "10px", color: "inherit" }}>メニュー</span> */}
           </Typography>
 
+          {/* <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+                <span style={{ fontSize: "12px", color: "inherit", textAlign: "center" }}>メニュー</span>
+          </Typography> */}
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
+            <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              >
+            >
               <MenuIcon />
-              </IconButton>
-              <Menu
+              {/* <AudiotrackIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+              <span style={{ fontSize: "12px", color: "inherit" }}>メニュー(ここクリック)</span>
+            </IconButton>
+            <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -105,18 +127,18 @@ function HeaderAppbar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                  display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none' },
               }}
               >
               {pages.map((page, ind) => (
-                  <MenuItem key={ind} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
+                <MenuItem key={ind} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
               ))}
-              </Menu>
+            </Menu>
           </Box>
-          <AudiotrackIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
+          
+          {/* <Typography
               variant="h5"
               noWrap
               component="a"
@@ -133,7 +155,7 @@ function HeaderAppbar() {
               }}
           >
               <span style={{ fontSize: "12px", color: "inherit" }}>メニュー</span>
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page, ind) => (
               <Button

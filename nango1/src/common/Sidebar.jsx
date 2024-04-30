@@ -21,6 +21,7 @@ class Sidebar extends React.Component {
                     title="南郷7丁目チャンネル"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
                   ></iframe>
                 </div>
                 <br/>
@@ -40,6 +41,7 @@ class Sidebar extends React.Component {
                     title="店内動画"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
                   ></iframe>
                 </div>
                 <br/>
