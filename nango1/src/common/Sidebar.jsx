@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
+    // lazyframe(".lazyframe");
   }
 
   render() {  
@@ -15,14 +19,19 @@ class Sidebar extends React.Component {
               <div className="youtube">
                 <div className="g-ytsubscribe" data-channelid="UCJqq9wYdNCzzuRvAeI_Op7Q" data-layout="full" data-count="default"></div>
                 <div className="yb_nango">
-                  {/* <iframe data-src="https://www.youtube.com/embed/fFLTWvUWRTU?start=539" ></iframe> */}
-                  <iframe
+                  {/* <iframe
+                    loading="lazy"
                     src={`https://www.youtube.com/embed/fFLTWvUWRTU?start=539`}
                     title="南郷7丁目チャンネル"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    loading="lazy"
-                  ></iframe>
+                  ></iframe> */}
+                  {/* Lazy load the YouTube player */}
+                  <LiteYouTubeEmbed 
+                    id="fFLTWvUWRTU"
+                    title="南郷7丁目チャンネル"
+                    params="start=539"
+                  />
                 </div>
                 <br/>
                 YouTubeにて「南郷7丁目チャンネル」開設しました&#x1f642;<br/>
@@ -35,14 +44,10 @@ class Sidebar extends React.Component {
             <ul>
               <div className="youtube">
                 <div className="yb_tennai">
-                  {/* <iframe data-src="https://www.youtube.com/embed/hYJdkUevtg8" ></iframe> */}
-                  <iframe
-                    src={`https://www.youtube.com/embed/hYJdkUevtg8`}
-                    title="店内動画"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
+                  <LiteYouTubeEmbed 
+                      id="hYJdkUevtg8"
+                      title="店内動画"
+                  />
                 </div>
                 <br/>
                 （店内風景）南郷7丁目 フォーク酒場

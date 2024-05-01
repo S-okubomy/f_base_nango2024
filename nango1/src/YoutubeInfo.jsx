@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 class YoutubeInfo extends React.Component {
   constructor(props) {
@@ -37,7 +39,8 @@ class YoutubeInfo extends React.Component {
               {/* <div class="g-ytsubscribe" data-channelid="UCJqq9wYdNCzzuRvAeI_Op7Q" data-layout="full" data-count="default"></div> */}
               <div className="yb_nango_info">
                 <div className="yb_nango_inner_mv">
-                  <iframe src="https://www.youtube.com/embed/fFLTWvUWRTU?start=539" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  <iframe src="https://www.youtube.com/embed/fFLTWvUWRTU?start=539" frameBorder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" />
                 </div>
               </div>
             </li>
