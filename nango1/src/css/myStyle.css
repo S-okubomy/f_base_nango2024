@@ -33,9 +33,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
-	/* list-style: none; */
-}
 blockquote, q {
 	quotes: none;
 }
@@ -58,15 +55,6 @@ body{
 }
 
 
-
-#mainImg img{width:98%;height:auto;}
-#mainImg{margin-bottom:20px;}
-
-
-
-
-
-
 /* リンク設定
 ------------------------------------------------------------*/
 #sidebar a:not(.typo_gy){
@@ -80,45 +68,9 @@ body{
   color:#313131;
 }
 
-a:hover, a:active{
-  outline: none;
-  color:#990000;
-}
-
-
-/**** Clearfix ****/
-/* nav .panel:after, nav#mainNav:after, .newsTitle:after, .bg:after,.post:after,.board_detail:after, ul.post li:after, ul.board_detail li:after,nav#mainNav .inner:after{content:""; display: table;clear: both;}
-nav .panel,nav#mainNav,.newsTitle,.bg, .post,.board_detail, ul.post li, ul.board_detail li,nav#mainNav .inner{zoom: 1;} */
-
-
-/* レイアウト
-------------------------------------------------------------*/
-#wrapper, .inner{width:100%;}
-#wrapper, .inner{
-margin:0 auto;
-width:880px;
-float:center;
-}
-
-#header{
-/* overflow:hidden; */
-}
-
-#Xcontent{
-float:right;
-/* width:627px; */
-padding:0px 0 0px;
-}
-
-/* #sidebar{
-float:left;
-width:233px;
-padding:22px 0 50px;
-} */
-
-#footer{
-clear:both;
-} 
+/* #footer{
+  clear:both;
+}  */
 
 
 /* ヘッダー
@@ -126,46 +78,29 @@ clear:both;
 
 /* サイト説明文
 ----------------------------------*/
-#header h1{
+/* #header h1{
 	padding:20px 0 0;
 	font-size:110%;
 	font-weight:bold;
 	text-align:left;
 }
 
-
-/* ロゴ (サイトタイトル)
-----------------------------------*/
-#header h2{
-clear:both;
-padding:5px 0 10px;
-color: #515151;
-font-size:150%;
-font-weight:bold;
-text-align:leftr;
-}
-
-
+#header h2 {
+  font-weight:bold;
+  text-align:left;
+  clear:both;
+  padding:5px 0 10px;
+  color: #515151;
+  font-size:150%;
+} */
 
 /* トップページ　メイン画像
 ----------------------------------*/
-#mainImg{
-  clear:both;
-  margin-top:0px;
-  line-height:0;
-  text-align:center;
-  z-index:0;
-}
-
 .typo_gy{
-/* margin:0 0 0px 0; */
-padding:0px 0px 0px 0px;
-border:5px solid #e2d7c2;
-background: #FCFCE0;
+  padding:0px 0px 0px 0px;
+  border:5px solid #e2d7c2;
 }
 
-/* ロゴ (サイトタイトル)
-----------------------------------*/
 #info h1{
   padding:5px 0 10px;
   color: #515151;
@@ -175,159 +110,18 @@ background: #FCFCE0;
 }
 
 #info h2{
-  margin:10px 0;
+  margin:1px 0;
   padding-bottom:2px;
   font-size:130%;
   font-weight:normal;
   color: #333;
   font-weight:bold;
-  /* border-bottom:2px solid #515151; */
 }
 
 
-/* .board_detail{
-	margin:0 0 20px 0;
-	padding:0px 10px 20px 20px;
-	border:1px solid #e2d7c2;
-	background: #FCFCE0;
-} */
 
-/* .toppage h4{
-margin:0 0 10px;
-font-size:16px;
-font-weight:normal;
-color:#333;
-} */
-
-/* .toppage{padding:10px 10px 20px 20px;} */
-
-
-/* 記事
+/* MyCard
 *****************************************************/
-/* .list{
-padding:10px 0;
-border-bottom:1px dashed #dcdcdc;
-}
-
-.list:last-child{border:0;}
-
-.post .list p{padding:0;} */
-
-/* .board_detail .list p{padding:0;} */
-
-/* .list span{padding-left:10px;} */
-
-
-/* タイポグラフィ
-*****************************************************/
-/* h2.title{
-clear:both;
-margin:0;
-padding:7px 10px 7px 10px;
-font-size:110%;
-color:#ffffff;
-border:1px solid #e2d7c2;
-border-bottom:0;
-background:#562E02 url(images/headingBg.png) repeat-x 0 100%;
-} */
-
-/* .dateLabel{
-text-align:right;
-font-weight:bold;
-color:#858585;
-} */
-
-.typo_gy ul li,ul.board_detail li{
-  margin:5 5px;
-  padding:5px 0 5px;
-  border-bottom:1px dashed #dcdcdc;
-}
-
-/* .typo_gy p{padding-bottom:15px; padding-right:10px; padding-left:15px;} */
-/* .board_detail p{padding-bottom:15px; padding-right:10px; padding-left:15px;} */
-
-/* .typo_gy ul{margin: 0 0 10px 10px;} */
-/* .board_detail ul{margin: 0 0 10px 10px;} */
-
-.typo_gy ul li{
-/* margin-bottom:0px;
-padding-left:15px; */
-/* background:url(images/bullet.png) no-repeat 0 8px; */
-}
-
-/* .board_detail ul li{
-	margin-bottom:5px;
-	padding-left:15px;
-	background:url(images/bullet.png) no-repeat 0 8px;
-} */
-
-/* .card_info ol{margin: 0 0 10px 30px;} */
-/* .board_detail ol{margin: 0 0 10px 30px;} */
-
-/* .card_info ol li{list-style:decimal;} */
-/* .board_detail ol li{list-style:decimal;} */
-
-/* .typo_gy h1{
-margin:20px 0;
-padding:5px 0;
-font-size:150%;
-color: #000;
-} */
-
-/* .board_detail h1{
-	margin:10px 0;
-	padding:5px 0;
-	font-size:150%;
-	color: #000;
-} */
-
-/* .typo_gy h2{
-margin:10px 0;
-padding-bottom:2px;
-font-size:130%;
-font-weight:normal;
-color: #333;
-} */
-
-/* .board_detail h2{
-	margin:10px 0;
-	padding-bottom:2px;
-	font-size:130%;
-	font-weight:normal;
-	color: #333;
-} */
-
-/* .typo_gy h3{
-margin:10px 0;
-font-size:100%;
-font-weight:normal;
-color:#2e2c2c;
-} */
-
-/* .board_detail h3{
-	margin:10px 0;
-	font-size:100%;
-	font-weight:normal;
-	color:#2e2c2c;
-} */
-
-/* .typo_gy blockquote {
-clear:both;
-padding:0px 0 10px 15px;
-margin:10px 0 25px 30px;
-border-left:5px solid #ccc;
-} */
-
-/* .board_detail blockquote {
-	clear:both;
-	padding:10px 0 10px 15px;
-	margin:10px 0 25px 30px;
-	border-left:5px solid #ccc;
-} */
- 
-/* .typo_gy blockquote p{padding:5px 0;}
-.board_detail blockquote p{padding:5px 0;} */
-
 .typo_gy table {
   padding:0;
   border: 1px #ccc solid;
@@ -337,23 +131,22 @@ border-left:5px solid #ccc;
 }
 
 .typo_gy table th{
-padding:10px;
-border: #ccc solid;
-border-width: 0 0 1px 1px;
-background:#faf1df;
+  padding:10px;
+  border: #ccc solid;
+  border-width: 0 0 1px 1px;
+  background:#faf1df;
 }
 
 .typo_gy table td{
-padding:10px;
-border: 1px #ccc solid;
-border-width: 0 0 1px 1px;
-background:#fff;
+  padding:10px;
+  border: 1px #ccc solid;
+  border-width: 0 0 1px 1px;
+  background:#fff;
 }
 
-
-textarea {
+/* textarea {
 	width: 100%;
-}
+} */
 
 tbody {
 	padding:0;

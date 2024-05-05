@@ -137,7 +137,7 @@ function RegDbTopInfo() {
             // ログインしていれば、DB登録画面を表示
             <div id="info">
               <MyCard 
-                title={<h2>■南郷７丁目”からのお知らせの{updateFlag ? "編集" : "登録"}&emsp;<button onClick={logout}>ログアウト</button></h2>}
+                title={<h2>お知らせの{updateFlag ? "編集" : "登録"}&emsp;<button onClick={logout}>ログアウト</button></h2>}
                 content={
                   <ul>
                     <Link to="/nango/rt/edit_info"><strong>★編集一覧画面</strong></Link>&nbsp;&nbsp;
@@ -165,6 +165,7 @@ function RegDbTopInfo() {
                             id="content"
                             onChange={(e) => setContent(e.target.value)}
                             value={content}
+                            style={{ minWidth: "300px", minHeight: "200px", resize: "both" }}
                         />
                       </div>
                       <br/>

@@ -33,11 +33,6 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-// const getShareX = (shareUrl: string, shareText: string) => {
-//   const url = `http://twitter.com/share?url=${shareUrl}&text=${shareText}`;
-//   return url;
-// }
-
 type Props = {
   title: string,
   content: any,
@@ -59,20 +54,20 @@ export default function MyCard({ title, content, shareUrl, msg }: Props) {
           // bgcolor: 'rgb(35, 118, 210)',
           bgcolor: 'rgb(10,125,250)',
           borderRadius: 5,
+          padding: '1px 1px 1px 1px',
           minWidth: 100,
-          height: 30,
-          maxHeight: 50,
+          minHeight: 15,
+          // height: 'auto',
           color: 'white',
           border: 3,
           boxShadow: 3,
         }}
         avatar={
-          <Avatar sx={{ bgcolor: 'rgb(255,127,0)', height: 30 }} aria-label="nango">
+          <Avatar sx={{ bgcolor: 'rgb(255,127,0)', height: 30, mr: -2 }} aria-label="nango">
             南郷
           </Avatar>
         }
         title={title}
-        // subheader="September 14, 2016"
       />
       <CardContent
         sx={{
@@ -82,10 +77,6 @@ export default function MyCard({ title, content, shareUrl, msg }: Props) {
         }}
       >
         {content}
-
-        {/* </Typography> */}
-
-
       </CardContent>
       <CardActions disableSpacing>
         <ShareButton shareUrl={shareUrl} msg={msg}/>
