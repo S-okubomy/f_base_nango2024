@@ -54,6 +54,7 @@ export default function MyCard({ title, content }: Props) {
           borderRadius: 5,
           minWidth: 100,
           height: 30,
+          maxHeight: 50,
           color: 'white',
           border: 3,
           boxShadow: 3,

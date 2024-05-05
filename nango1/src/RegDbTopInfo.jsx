@@ -10,6 +10,8 @@ import {
   Link
 } from "react-router-dom";
 
+import MyCard from "./common/MyCard";
+
 function RegDbTopInfo() {
 
   // ログイン判定用
@@ -133,63 +135,64 @@ function RegDbTopInfo() {
             <Navigate to={`/nango/rt/login`} />
           ) : (
             // ログインしていれば、DB登録画面を表示
-            <>
-              <section>
-                <h2 className="title">■南郷７丁目”からのお知らせの{updateFlag ? "編集" : "登録"}&emsp;<button onClick={logout}>ログアウト</button></h2>
-                <ul className="post">
-                  <Link to="/nango/rt/edit_info"><strong>★編集一覧画面</strong></Link>&nbsp;&nbsp;
-                  <Link to="/nango/rt/regdb_top_info"><strong>★登録/更新画面</strong></Link>
-                  <form onSubmit={onSubmit}>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <label htmlFor="title">タイトル</label>
-                    </div>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <input
-                          type="text"
-                          id="title"
-                          onChange={(e) => setTitle(e.target.value)}
-                          value={title}
-                      />
-                    </div>
-                    <br/>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <label htmlFor="content">お知らせ内容</label>
-                    </div>
-                    <br/>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <textarea
-                          type="text"
-                          id="content"
-                          onChange={(e) => setContent(e.target.value)}
-                          value={content}
-                      />
-                    </div>
-                    <br/>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <input 
-                        type="checkbox" 
-                        checked={isDel} 
-                        onChange={(e) => setIsDel(e.target.checked)}
-                      />
-                      {' '} <label htmlFor="content">一覧から非表示</label>
-                    </div>
-                    <br/>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <input 
-                        type="checkbox" 
-                        checked={isDbDel} 
-                        onChange={(e) => setIsDbDel(e.target.checked)}
-                      />
-                      {' '} <label htmlFor="content">データベースから削除</label>
-                    </div>
-                    <br/>
-                    <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
-                      <button type="submit">{updateFlag ? "編集" : "登録"}</button>
-                    </div>
-                  </form>
-                </ul>
-              </section>
-            </>
+            <div id="info">
+              <MyCard 
+                title={<h2>■南郷７丁目”からのお知らせの{updateFlag ? "編集" : "登録"}&emsp;<button onClick={logout}>ログアウト</button></h2>}
+                content={
+                  <ul>
+                    <Link to="/nango/rt/edit_info"><strong>★編集一覧画面</strong></Link>&nbsp;&nbsp;
+                    <Link to="/nango/rt/regdb_top_info"><strong>★登録/更新画面</strong></Link>
+                    <form onSubmit={onSubmit}>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <label htmlFor="title">タイトル</label>
+                      </div>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <input
+                            type="text"
+                            id="title"
+                            onChange={(e) => setTitle(e.target.value)}
+                            value={title}
+                        />
+                      </div>
+                      <br/>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <label htmlFor="content">お知らせ内容</label>
+                      </div>
+                      <br/>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <textarea
+                            type="text"
+                            id="content"
+                            onChange={(e) => setContent(e.target.value)}
+                            value={content}
+                        />
+                      </div>
+                      <br/>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <input 
+                          type="checkbox" 
+                          checked={isDel} 
+                          onChange={(e) => setIsDel(e.target.checked)}
+                        />
+                        {' '} <label htmlFor="content">一覧から非表示</label>
+                      </div>
+                      <br/>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <input 
+                          type="checkbox" 
+                          checked={isDbDel} 
+                          onChange={(e) => setIsDbDel(e.target.checked)}
+                        />
+                        {' '} <label htmlFor="content">データベースから削除</label>
+                      </div>
+                      <br/>
+                      <div style={{ display: "inline-block", margin: "5px 0px 3px 3px" ,padding: "0px" }}>
+                        <button type="submit">{updateFlag ? "編集" : "登録"}</button>
+                      </div>
+                    </form>
+                  </ul>
+              }/>
+            </div>
           )}
         </>
       )}

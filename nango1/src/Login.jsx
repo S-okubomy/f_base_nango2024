@@ -6,6 +6,7 @@ import {
 import { auth } from "./firebase";
 /* 「Link」をimport↓ */
 import { Navigate, Link } from "react-router-dom";
+import MyCard from "./common/MyCard";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -38,30 +39,37 @@ const Login = () => {
       {user ? (
         <Navigate to={`/nango/rt/regdb_top_info`} />
       ) : (
-        <>
-          <h1>ログイン用</h1>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>メールアドレス</label>
-              <input
-               name="email"
-               type="email"
-               value={loginEmail}
-               onChange={(e) => setLoginEmail(e.target.value)}
-              />
+            <div id="info">
+              <MyCard 
+                title={<h2>ログイン画面</h2>}
+                content={
+                <ul>
+                  <form onSubmit={handleSubmit}>
+                    <div>
+                      <label>メールアドレス</label>&nbsp;
+                      <input
+                      name="email"
+                      type="email"
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label>パスワード</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input
+                        name="password"
+                        type="password"
+                        value={loginPassword}
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                      />
+                    </div>
+                    <button>ログイン</button>
+                  </form>
+                </ul>
+              }/>
             </div>
-            <div>
-              <label>パスワード</label>
-              <input
-                name="password"
-                type="password"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-            </div>
-            <button>ログイン</button>
-          </form>
-        </>
+
+
       )}
     </>
   );

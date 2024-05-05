@@ -1,4 +1,6 @@
 import React from "react";
+import MyCard from "./common/MyCard";
+import CardContent from '@mui/material/CardContent';
 
 class Event extends React.Component {
   constructor(props) {
@@ -7,23 +9,33 @@ class Event extends React.Component {
 
   render() {  
     return (
-      <div id="content">
-        <section>
-          <h2 className="title"><span style={{ fontSize: "15px", fontWeight: "bold" }} >■イベントカレンダー■</span></h2>
-          <ul className="post">
-            <iframe src="https://freecalend.com/open/mem108709_nopopon" style={{ border: "solid 1px #777"}} width="880" height="600" 
-              frameBorder="0" scrolling="no" loading="lazy"></iframe>
-          </ul>
-        </section>
+      <div id="info">
+        <MyCard 
+          title={<h2>イベントカレンダー</h2>}
+          content={
+            <ul>
+              <iframe src="https://freecalend.com/open/mem108709_nopopon" style={{ border: "solid 1px #777"}} width="880" height="600" 
+                frameBorder="0" scrolling="no" loading="lazy"></iframe>
+            </ul>
+        }/>
 
-        <section>
-          <ul className="post">
-            <span style={{ fontSize: "5px" }}>
+        <CardContent
+          sx={{
+            bgcolor: '#FCFCE0',
+            padding: '0px 5px 5px 10px',
+          }}
+        >
+          <span style={{ fontSize: "10px" }}>
+            ※　当店では飲酒運転防止のため、お車でお越しのお客様には、アルコール類のご提供は致しておりません。<br/>
+            ※　20歳未満のお客様に関しても、同様にアルコールのご提供はしておりません。      <br/>
+            ※　自転車来店後の飲酒運転自粛をお願いしています。
+          </span>
+          <br/>
+          <span style={{ fontSize: "5px" }}>
                 ※作成中のため、一部内容が古い場合がございますが、<br/>
                 ご了承お願い致します&#x1f647;
-            </span>
-          </ul>
-        </section>
+          </span>
+        </CardContent>
       </div>
     );
   };

@@ -2,6 +2,8 @@ import React from "react";
 import QaForm from "./QaForm";
 import QaList from "./QaList";
 // import Cookies from 'js-cookie';
+import MyCard from "./common/MyCard";
+import CardContent from '@mui/material/CardContent';
 
 class QaByAi extends React.Component {
     constructor(props) {
@@ -107,34 +109,45 @@ class QaByAi extends React.Component {
   
     render() {
       return (
-        <div id="content">
-          <section>
-            <h2 className="title">■AI 南郷君 ご質問にお答えします。</h2>
-            <ul className="post">
-              <img src="/static/hp_nango/images/ai_robot_b.png" width="120" />
-              <li>不明点等のご質問をAIがお答えします。&#x1f916;<br/>
-                  （例）どんなお店ですか？<br/>
-                  　　　オススメの曲教えて？
-              </li>
-              <li>
-                <div className="commentBox">
-                  {/* 子コンポーネントからonCommentSubmitを実行された時にhandleCommentSubmitを実行する */}
-                  <QaForm onCommentSubmit={this.handleCommentSubmit} ref={this.CommentFormRef} />
-                  <br/>
-                  <QaList qa_infos={this.state.qa_infos} />
-                </div>
-              </li>
-            </ul>
-          </section>
+        <div id="info">
+          <MyCard 
+            title={<h2>AI 南郷君 ご質問にお答えします。</h2>}
+            content={
+              <ul>
+                <img src="/static/hp_nango/images/ai_robot_b.png" width="120" style={{ clear: "both", float:"left" }} />
+                <li>不明点等のご質問をAIがお答えします。&#x1f916;<br/>
+                    （例）どんなお店ですか？<br/>
+                    　　　オススメの曲教えて？
+                    <br/><br/><br/><br/>
+                </li>
+                <li>
+                  <div className="commentBox">
+                    {/* 子コンポーネントからonCommentSubmitを実行された時にhandleCommentSubmitを実行する */}
+                    <QaForm onCommentSubmit={this.handleCommentSubmit} ref={this.CommentFormRef} />
+                    <br/>
+                    <QaList qa_infos={this.state.qa_infos} />
+                  </div>
+                </li>
+              </ul>
+          }/>
 
-          <section>
-            <ul className="post">
-              <span style={{ fontSize: "5px" }}>
+          <CardContent
+            sx={{
+              bgcolor: '#FCFCE0',
+              padding: '0px 5px 5px 10px',
+            }}
+          >
+            <span style={{ fontSize: "10px" }}>
+              ※　当店では飲酒運転防止のため、お車でお越しのお客様には、アルコール類のご提供は致しておりません。<br/>
+              ※　20歳未満のお客様に関しても、同様にアルコールのご提供はしておりません。      <br/>
+              ※　自転車来店後の飲酒運転自粛をお願いしています。
+            </span>
+            <br/>
+            <span style={{ fontSize: "5px" }}>
                   ※作成中のため、一部内容が古い場合がございますが、<br/>
                   ご了承お願い致します&#x1f647;
-              </span>
-            </ul>
-          </section>
+            </span>
+          </CardContent>
         </div>
       );
     };
