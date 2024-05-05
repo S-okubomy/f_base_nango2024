@@ -63,12 +63,10 @@ class Sidebar extends React.Component {
             <ul>
               <p><a href="https://www.facebook.com/toshihiro.suzuki.796" target="_blank">&gt;&gt;&gt;　facebookページは<span style={{ color: "red" }} >こちら</span></a><br/></p>
               <div style={{ width: '100%' }} >
-                {/* TODO 後で修正 */}
-                {/* <div data-href="https://www.facebook.com/%E3%83%A9%E3%82%A4%E3%83%96%E9%85%92%E5%A0%B4%E5%96%AB%E8%8C%B6-%E5%8D%97%E9%83%B7%EF%BC%97%E4%B8%81%E7%9B%AE-369736749885325/" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"></div> */}
-                
- 
-                <div class="fb-post" data-href="https://www.facebook.com/toshihiro.suzuki.796" data-width="500" data-show-text="true"></div>
+                <div className="fb-post" data-href="https://www.facebook.com/toshihiro.suzuki.796" data-width="500" data-show-text="true"></div>
               </div>
+
+
             </ul>
           }
           shareUrl="https://nango7.okbmk.com/"
