@@ -54,53 +54,21 @@ body{
   overflow-x: hidden;  /* 横スクロール禁止 */
 }
 
-
-/* リンク設定
+/* オブジェクトレスポンシブ用
 ------------------------------------------------------------*/
-#sidebar a:not(.typo_gy){
-  margin:0;
-  padding:0;
-  text-decoration:none;
-  outline:0;
-  vertical-align:baseline;
-  background:transparent;
-  font-size:100%;
-  color:#313131;
+/* オブジェクト設定 */
+embed,iframe,object {
+	max-width: 100%;
+}
+ 
+/* Youtube
+------------------------------------------------------------*/
+.youtube iframe{
+  width: 100%;
 }
 
-/* #footer{
-  clear:both;
-}  */
-
-
-/* ヘッダー
-*****************************************************/
-
-/* サイト説明文
-----------------------------------*/
-/* #header h1{
-	padding:20px 0 0;
-	font-size:110%;
-	font-weight:bold;
-	text-align:left;
-}
-
-#header h2 {
-  font-weight:bold;
-  text-align:left;
-  clear:both;
-  padding:5px 0 10px;
-  color: #515151;
-  font-size:150%;
-} */
-
-/* トップページ　メイン画像
-----------------------------------*/
-.typo_gy{
-  padding:0px 0px 0px 0px;
-  border:5px solid #e2d7c2;
-}
-
+/* MyCardのタイトル書式
+------------------------------------------------------------*/
 #info h1{
   padding:5px 0 10px;
   color: #515151;
@@ -119,9 +87,25 @@ body{
 }
 
 
+/* サイドバー
+------------------------------------------------------------*/
+#sidebar a:not(.typo_gy){
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  outline:0;
+  vertical-align:baseline;
+  background:transparent;
+  font-size:100%;
+  color:#313131;
+}
 
 /* MyCard
 *****************************************************/
+.typo_gy {
+  padding:0;
+}
+
 .typo_gy table {
   padding:0;
   border: 1px #ccc solid;
@@ -144,80 +128,43 @@ body{
   background:#fff;
 }
 
-/* textarea {
-	width: 100%;
-} */
-
-tbody {
-	padding:0;
-}
-
 .typo_gy dt{font-weight:bold;}
 
 .typo_gy dd{padding-bottom:10px;}
 
 .typo_gy img{max-width:100%;height:auto;}
 
-/* img.aligncenter {
-display: block;
-margin:5px auto;
+.typo_gy li:last-child{border:0;}
+.typo_gy li:last-child{border:0;}
+
+.typo_gy img{
+  /* float:left; */
+  margin:0 5px 5px 10px;
 }
 
-img.alignright, img.alignleft{
-margin: 10px 10px 15px 15px;
-display:inline;
+.typo_gy h3{
+  margin:0 0 10px 10px;
+  font-size:14px;
+  font-weight:normal;
+  color:#333;
+  border:0;
 }
 
-img.alignleft{margin:10px 15px 15px 10px;} */
+.typo_gy h3{
+	margin:0 0 10px 10px;
+	font-size:14px;
+	font-weight:normal;
+	color:#333;
+	border:0;
+}
+
+tbody {
+	padding:0;
+}
+
 
 .alignright{float:right;}
 .alignleft{float:left;}
-
-
-/* サイドバー　ウィジェット
-*****************************************************/
-section.widget ul, .widget_search, #calendar_wrap, .textwidget{
-margin:0 0 20px 0;
-padding:5px 10px 10px 17px;
-border:1px solid #e2d7c2;
-background: #FCFCE0;
-}
-
-section.widget ul ul{
-border:0;
-margin:0;
-padding:0 0 0 10px;
-}
-
-section.widget ul img{
-	text-align:center;
-}
-
-section.widget h3{
-clear:both;
-margin:0;
-padding:7px 10px 7px 10px;
-font-size:110%;
-border:1px solid #e2d7c2;
-border-bottom:0;
-color:#fff;
-background:#562E02 url(images/headingBg.png) repeat-x 0 100%;
-}
-section.widget h3 a{
-color:#fff;
-}
-section.widget h3 a:hover, a:active{
-outline: none;
-color:#990000;
-}
-section.widget li a{
-display:block;
-padding:7px 0 7px 12px;
-background:url(images/arrow.gif) no-repeat 0 12px;
-border-bottom:1px dashed #dcdcdc;
-}
-
-section.widget li:last-child a{border:0;}
 
 input[type="text"]{
 	width:auto
@@ -254,13 +201,6 @@ input[type="text"]{
   text-align:center;
 }
 
-
-/* トップページ 最新記事4件
-------------------------------------------------------------*/
-.typo_gy{
-  padding:0;
-}
-
 /* bootstrap pagination */
 ul.pagination li {
   margin: 0;
@@ -268,289 +208,7 @@ ul.pagination li {
   border-bottom: none
 }
 
-.typo_gy li:last-child{border:0;}
-.typo_gy li:last-child{border:0;}
-
-.typo_gy img{
-  /* float:left; */
-  margin:0 5px 5px 10px;
-}
-
-.typo_gy h3{
-  margin:0 0 10px 10px;
-  font-size:14px;
-  font-weight:normal;
-  color:#333;
-  border:0;
-}
-
-.typo_gy h3{
-	margin:0 0 10px 10px;
-	font-size:14px;
-	font-weight:normal;
-	color:#333;
-	border:0;
-}
 
 nav#mainNav ul li.current-menu-item a, nav#mainNav ul li a:hover span, nav#mainNav ul li a:hover, nav#mainNav ul li.current-menu-parent a{
   color:#4c4c4c;
 }
-
-
-/* メインメニュー　PC用
-------------------------------------------------------------*/
-/* @media only screen and (min-width: 1025px){
-  nav#mainNav{
-	clear:both;
-	position:relative;
-	z-index:200;
-	width:100%;
-	}
-	
-	nav#mainNav .inner{
-	padding-left:1px;
-	background:url(images/mainNavSep.png) no-repeat 0 5px;
-	}
-
-	nav#mainNav ul li{
-	float: left;
-	position: relative;
-	background:url(images/mainNavSep.png) no-repeat 100% 5px;
-	}
-	
-	nav#mainNav ul li a{
-	display: block;
-	text-align: center;
-	_float:left;
-	color:#000;
-	height:35px;
-	line-height:45px;
-	font-size:110%;
-	margin-right:1px;
-	padding:10px 33px 0;
-	font-weight:bold;
-	}
-	
-	nav#mainNav ul li a span,nav#mainNav ul li a strong{
-	display:block;
-	font-size:100%;
-	line-height:1.4;
-	}
-	
-	nav#mainNav ul li a span{
-	font-size:70%;
-	color:#4B3318;
-	font-weight:normal;
-	font-family:"Times New Roman", Times, serif;
-	}
-
-	nav div.panel{
-  display:block !important;
-  float:left;
-  }
-  
-  a#menu{display:none;}
-  
-  nav#mainNav ul li.current-menu-item a, nav#mainNav ul li a:hover span, nav#mainNav ul li a:hover, nav#mainNav ul li.current-menu-parent a{
-  color:#4c4c4c;
-  }
-  
-  nav#mainNav ul ul{
-	width:131px;
-	border:1px solid #e2d7c2;
-	border-top:0;
-	}
-  
-  nav#mainNav ul li ul{display: none;}
-  
-  nav#mainNav ul li:hover ul{
-  display: block;
-  position: absolute;
-  top:42px;
-  left:-1px;
-  z-index:500;
-  }
-	
-  nav#mainNav ul li li{
-	margin:0;
-  float: none;
-  height:40px;
-  line-height:40px;
-  width:131px;
-	background:#faf1df;
-	border-bottom:1px dotted #e2d7c2;
-  }
-	
-	nav#mainNav ul li li:last-child{border:0;}
-	
-  nav#mainNav ul li li a{
-  width:100%;
-  height:40px;
-	padding:0 0 0 10px;
-  line-height:40px;
-  font-size:95%;
-  text-align:left;
-  }
-	
-	nav#mainNav ul li li.current-menu-item a,nav#mainNav ul li li a:hover{color:#6f6f6f}
-
-} */
-
-/* メインメニュー iPadサイズ以下から
-------------------------------------------------------------*/
-/* @media only screen and (max-width:1024px){
-	nav#mainNav{
-	clear:both;
-	width:880px;
-	margin:0 auto 10px;
-	border:1px solid #e2d7c2;
-	}
-	
-	nav#mainNav a.menu{
-    width:100%;
-    display:block;
-    height:37px;
-    line-height:37px;
-    font-weight: bold;
-    text-align:left;
-    background: url(images/menuOpen.png) no-repeat 5px 8px;
-	}
-	
-	nav#mainNav a#menu span{
-    padding-left:35px;
-	}
-	
-	
-	nav#mainNav a.menuOpen{
-	  background: url(images/menuOpen.png) no-repeat 5px -34px;
-	}
-	
-	nav#mainNav a#menu:hover{cursor:pointer;}
-	
-	nav .panel{
-    display: none;
-    width:100%;
-    position: relative;
-    right: 0;
-    top:0;
-    z-index: 1;
-	}
-
-	nav#mainNav ul{margin:0;padding:0;}
-
-	nav#mainNav ul li{
-    float: none;
-    clear:both;
-    width:100%;
-    height:auto;
-    line-height:1.2;
-	}
-
-	nav#mainNav ul li:first-child{border-top:1px solid #e2d7c2;}
-	nav#mainNav ul li li:first-child{border-top:0;}
-
-	nav#mainNav ul li a,nav#mainNav ul li.current-menu-item li a{
-	display: block;
-	padding:0px;
-	text-align:left;
-	border-bottom:1px dashed #ccc;
-	background:#fff;
-	}
-	
-	nav#mainNav ul li:last-child a{border:0;}
-	nav#mainNav ul li li:last-child a{border:0;}
-	nav#mainNav ul li li:last-child a{border-bottom:1px dashed #ccc;}
-
- 	nav#mainNav ul li a span{display:none;}
- 
-	nav#mainNav ul li.current-menu-item a,nav#mainNav ul li a:hover,nav#mainNav ul li.current-menu-item a,nav#mainNav ul li a:active, nav#mainNav ul li li.current-menu-item a, nav#mainNav ul li.current-menu-item li a:hover, nav#mainNav ul li.current-menu-item li a:active{
-	background:#f6f6f6;
-	}
-
-	nav#mainNav ul li li{
-	float:left;
-	border:0;
-	}
-
-	nav#mainNav ul li li a, nav#mainNav ul li.current-menu-item li a, nav#mainNav ul li li.current-menu-item a{
-  padding-left:40px;
-	background:#fff url(images/sub1.png) no-repeat 20px 18px;
-			  color:rgba(136,72,0,1.00);
-			  font-weight:bold;
-			  }
-
-	nav#mainNav ul li li.current-menu-item a,nav#mainNav ul li li a:hover, nav#mainNav ul li.current-menu-item li a:hover{
-		background:#f6f6f6 url(images/sub1.png) no-repeat 20px -62px;}
-	
-	nav#mainNav ul li li:last-child a{background:#fff url(images/subLast.png) no-repeat 20px 20px;}
-	nav#mainNav ul li li:last-child.current-menu-item a,nav#mainNav ul li li:last-child a:hover,nav#mainNav ul li.current-menu-item li:last-child a:hover{background:#f6f6f6 url(images/subLast.png) no-repeat 20px -65px;}
-	
-	nav div.panel{float:none;}
-	
-	#mainImg{margin-bottom:20px;}
-} */
-
-
-/* 959px以下から 1カラム表示
-------------------------------------------------------------*/
-/* @media only screen and (max-width: 959px){
-  #wrapper, .inner{width:100%;}
-
-	#header{width:96%;padding:0 2%;}
-	
-	.contact{padding:10px 0 10px;}
-
-  nav#mainNav{width:95%;}
-
-	nav#mainNav ul{margin:0 auto;}
-	nav#mainNav ul ul{padding:0;}
-
-	nav div.panel{float:none;}
-	
-	#mainImg img{width:98%;height:auto;}
-
-	#content, #sidebar{clear:both;width:95%;float:none;margin:0 auto;padding:10px 0;	}
-	
-	.banner{width:100%;margin:0 auto;text-align:center;}
-  p.banner img{width:100%;height:auto;}
-	section.widget_search{text-align:center;}
-	#calendar_wrap table{width:260px;}
-	
-	#footer li{margin-bottom:10px;}
-	
-} */
-
-
-/* 幅644px以下から ヘッダー等微調節
-------------------------------------------------------------*/
-/* @media only screen and (max-width: 644px){
-	nav#mainNav{width:98%;}
-	#header{text-align:center;background-image:none;}
-	#header h2,.contact{float:none;}
-	.contact{padding:0 0 20px;}
-	.contact p{text-align:center;}
-	#headerInfo{width:250px;margin:0 auto;}
-	img.alignright, img.alignleft{display: block;	margin:5px auto;}
-	.alignright,.alignleft{float:none;}
-} */
-
-
-/* カレンダーレスポンシブ用
-------------------------------------------------------------*/
-/* オブジェクト設定 */
-embed,
-iframe,
-object{
-	max-width: 100%;
-}
- 
-/* Youtubeレスポンシブ用
-------------------------------------------------------------*/
-.youtube iframe{
-  width: 100%;
-}
-/* fbプラグインレスポンシブ用
-------------------------------------------------------------*/
-/* .fb_plgin{
-  width: 100%;
-} */

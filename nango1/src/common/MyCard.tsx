@@ -48,7 +48,10 @@ export default function MyCard({ title, content, shareUrl, msg }: Props) {
   };
 
   return (
-    <Card className="typo_gy" sx={{ float: 'center', margin: '5px 2px 5px 2px' }}>
+    <Card className="typo_gy"
+      sx={{ float: 'center', margin: '5px 2px 5px 2px'
+        , padding: '0px 0px 0px 0px', border: '5px solid #e2d7c2' }}
+    >
       <CardHeader
         sx={{
           // bgcolor: 'rgb(35, 118, 210)',
