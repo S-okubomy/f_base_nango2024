@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 import { collection, addDoc, doc, setDoc, getDoc, query, where, orderBy, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
+import ElevateAppBar from "./common/ElevateAppBar";
+import Grid from '@mui/material/Unstable_Grid2';
+
+import MyCard from "./common/MyCard";
+
 // const {Anime, stagger} = ReactAnime
 
 class Top extends React.Component {
@@ -53,34 +58,6 @@ class Top extends React.Component {
 
     // AI南郷君のお話取得
     getTopAiComment() {
-      // const params = { // 渡したいパラメータをJSON形式で書く
-      //   eventKey: "aiTopCom",
-      // };
-
-      // const query_params = new URLSearchParams(params);
-      // // fetch("/nango/top_nango_ai_com" + "?" + query_params)
-      // fetch("https://g2l6vmjobj.execute-api.ap-northeast-1.amazonaws.com/nango_ai_220717?mode=p&que_sentence=今日の天気を教えて&pkey=nango7_ai_nango_kun", {
-      //   mode: 'cors'
-      // })
-      // .then(res => res.json())
-      // .then(
-      //   (resJson) => {
-      //     this.setState({
-      //       qa_infos: resJson["payload"]["qa_infos"],
-      //       isLoadedTopAI: true, // TODO 一旦無効化しているので戻す
-      //     });
-      //     console.log(this.state.qa_infos);
-      //   },
-      //   (error) => {
-      //     this.setState({
-      //       // isLoadedTopAI: true,　// TODO 一旦無効化しているので戻す
-      //       error,
-      //     });
-      //   }
-      // )
-
-       
-
     }
 
     componentDidMount() {
@@ -129,10 +106,21 @@ class Top extends React.Component {
       });
 
       return (
-        <div id="content">
-          <section style={{ background: "#FCFCE0" }}>
-            <h2 className="title">フォーク酒場　“南郷７丁目”の店内風景です。</h2>
-            <ul className="post" >
+
+        <div>
+
+        {/* <Grid container spacing={2}>
+          <Grid xs={12} md={8}>
+            <ElevateAppBar>
+                    test
+            </ElevateAppBar>
+          </Grid>
+        </Grid> */}
+
+        <MyCard
+          title="フォーク酒場　“南郷７丁目”の店内風景です。"
+          content={
+            <ul>
               <Slider {...settings} >
                 <div>
                   <img src="/static/hp_nango/images/slide1.jpg" width="100%" alt="" style={{ margin: "0px", padding: "7px" }} />
@@ -154,11 +142,12 @@ class Top extends React.Component {
                 </div>
               </Slider>
             </ul>
-          </section>
+        }/>
 
-          <section>
-            <h2 className="title">“いらっしゃいませ！”　当店のコンセプトについてご説明いたします。</h2>
-            <ul className="post">
+        <MyCard 
+          title="“いらっしゃいませ！”　当店のコンセプトについてご説明いたします。"
+          content={
+            <ul style={{ listStyle: "none" }} >
               <li>
                   <span style={{ fontSize: "20px", fontWeight: "bold", color: "blue" }} >＜気楽、和気あいあいを大切に＞</span><br/>
                   当店は初めての方でも、気楽に楽しいひと時をモットー<br/>
@@ -229,29 +218,33 @@ class Top extends React.Component {
                   </table>
               </li>
             </ul>
-          </section>
+         }/>
 
-          {/*　一時的に無効にする　*/}
-          {/* <div dangerouslySetInnerHTML={this.getHtml()}></div>    */}
 
-          {/* TODO */}
-          <section>
-            <h2 className="title">■“南郷７丁目”からのお知らせ■　　
-              <button className="second"><Link to="/nango/rt/regdb_top_info"><strong>投稿（管理者）</strong></Link></button>
-            </h2>
-            <ul className="post">
+        <MyCard 
+          title={<div>南郷７丁目からのお知らせ <button className="second"><Link to="/nango/rt/regdb_top_info"><strong>投稿（管理者）</strong></Link></button></div>}
+          content={
+            <ul>
               <br/>
               { this.state.isLoadedTopInfo &&
                 top_info_nodes
               }
             </ul>
-          </section>
-          
-          <section>
-            <ul className="post">
+
+        }/>
+
+        <MyCard 
+          title="イベントカレンダー"
+          content={
+            <ul>
               <Link to="/nango/rt/event_nango_temp" ><img src="/static/hp_nango/images/event.jpg" alt="イベントカレンダー" width="100%" style={{ margin: "0px" }} /></Link>
             </ul>
-          </section>
+
+        }/>
+          
+
+
+
 
           {/* { this.state.isLoadedTopAI &&
             <div id="fixed-nango-ai">
@@ -274,6 +267,7 @@ class Top extends React.Component {
             </div>
           } */}
         </div>
+
       );
     };
 }

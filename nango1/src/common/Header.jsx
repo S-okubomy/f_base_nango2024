@@ -21,12 +21,19 @@ class Header extends React.Component {
         </div>
 
         
+        {/* <div style={{ width:"880" }}>
+          <HeaderAppbar/>
+        </div> */}
+
+        <HeaderAppbar/>
 
         <div className="inner">
-          
+          {/* <HeaderAppbar/> */}
 
-          <h2 className="title" style={{ background: "#FCFCE0" }}>
-            <HeaderAppbar/>
+        {/* <HeaderAppbar style={{ width: "100%", margin: "0 auto", width: "880px" }} /> */}
+          
+          {/* <h2 className="title" style={{ background: "#FCFCE0" }}> */}
+            {/* <HeaderAppbar/> */}
 
             {/* <li><Link to="/"><strong>トップページ</strong></Link></li>
             <li><Link to="/nango/rt/info_nango_temp">お店のご案内</Link></li>
@@ -40,7 +47,7 @@ class Header extends React.Component {
             {/* <li><Link to="/nango/rt/regdb_top_info"><strong>管理用</strong></Link></li>
             <li><Link to="/nango/rt/qa_by_ai_temp"><strong>AI南郷君</strong></Link></li> */}
             {/* <li><Link to="/nango/rt/login"><strong>login</strong></Link></li> */}
-          </h2>
+          {/* </h2> */}
         </div>
 
         {/* <nav id="mainNav" name="mainNav">

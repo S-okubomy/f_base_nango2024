@@ -77,27 +77,7 @@ function HeaderAppbar() {
               }}
           >
             <Link to="/"><span style={{ fontSize: "10px", color: "white" }}>メニュー</span></Link>
-              {/* <span style={{ fontSize: "10px", color: "inherit" }}>メニュー</span> */}
           </Typography>
-
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-                <span style={{ fontSize: "12px", color: "inherit", textAlign: "center" }}>メニュー</span>
-          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -109,7 +89,6 @@ function HeaderAppbar() {
               color="inherit"
             >
               <MenuIcon />
-              {/* <AudiotrackIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
               <span style={{ fontSize: "12px", color: "inherit" }}>メニュー(ここクリック)</span>
             </IconButton>
             <Menu
@@ -138,24 +117,6 @@ function HeaderAppbar() {
             </Menu>
           </Box>
           
-          {/* <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              }}
-          >
-              <span style={{ fontSize: "12px", color: "inherit" }}>メニュー</span>
-          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page, ind) => (
               <Button
