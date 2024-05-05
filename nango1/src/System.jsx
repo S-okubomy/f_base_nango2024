@@ -11,7 +11,7 @@ class system extends React.Component {
     return (
       <div id="info">
         <MyCard 
-          title={<h2>“いらっしゃいませ！”　当店のご利用についてご説明いたします。</h2>}
+          title={<h2>“いらっしゃいませ！” 　ご利用方法</h2>}
           content={
             <ul>
               <li>
@@ -30,7 +30,10 @@ class system extends React.Component {
                 周りの方にご配慮頂き、ご対応お願い致します。
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/system_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　ご利用方法"
+        />
 
         <MyCard 
           title={<h2>お願い</h2>}
@@ -57,7 +60,10 @@ class system extends React.Component {
                   丁寧に扱い、皆で大切に使用しましょう。
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/system_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　ご利用方法"
+        />
       </div>
     );
   };

@@ -22,7 +22,10 @@ class Info extends React.Component {
             </b>
             <br/>
           </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/info_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お店のご案内"
+        />
 
         <MyCard 
           title="周辺MAP　吉祥寺駅南口から徒歩3分"
@@ -33,7 +36,10 @@ class Info extends React.Component {
                 <small><a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%AD%A6%E8%94%B5%E9%87%8E%E5%B8%82%E5%90%89%E7%A5%A5%E5%AF%BA%E5%8D%97%E7%94%BA2-8-8&amp;aq=&amp;sll=35.702352,139.580494&amp;sspn=0.006822,0.010847&amp;vpsrc=6&amp;brcurrent=3,0x6018ee392dd2c103:0xd298689ee77e04dc,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%AD%A6%E8%94%B5%E9%87%8E%E5%B8%82%E5%90%89%E7%A5%A5%E5%AF%BA%E5%8D%97%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%98&amp;ll=35.702352,139.580494&amp;spn=0.001758,0.002712&amp;t=m&amp;z=14" style={{ textAlign: "center", color: "#0000FF" }} >大きな地図で見る</a></small>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/info_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お店のご案内"
+        />
 
       <CardContent
         sx={{

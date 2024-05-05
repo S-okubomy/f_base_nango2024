@@ -14,9 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Link, Navigate } from "react-router-dom";
+import ShareButton from "./ShareButton";
 
-
-import { Link } from "react-router-dom";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -33,12 +33,19 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
+// const getShareX = (shareUrl: string, shareText: string) => {
+//   const url = `http://twitter.com/share?url=${shareUrl}&text=${shareText}`;
+//   return url;
+// }
+
 type Props = {
   title: string,
   content: any,
+  shareUrl: string,
+  msg: string,
 }
 
-export default function MyCard({ title, content }: Props) {
+export default function MyCard({ title, content, shareUrl, msg }: Props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -60,7 +67,7 @@ export default function MyCard({ title, content }: Props) {
           boxShadow: 3,
         }}
         avatar={
-          <Avatar sx={{ bgcolor: red[900], height: 30 }} aria-label="nango">
+          <Avatar sx={{ bgcolor: 'rgb(255,127,0)', height: 30 }} aria-label="nango">
             南郷
           </Avatar>
         }
@@ -81,12 +88,7 @@ export default function MyCard({ title, content }: Props) {
 
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <ShareButton shareUrl={shareUrl} msg={msg}/>
       </CardActions>
     </Card>
   );

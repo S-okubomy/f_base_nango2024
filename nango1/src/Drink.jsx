@@ -35,7 +35,10 @@ class Drink extends React.Component {
                 </p>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/drink_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お飲み物"
+        />
 
         <MyCard 
           title={<h2>ボトル（ボトルキープ可）</h2>}
@@ -57,7 +60,10 @@ class Drink extends React.Component {
                 </p>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/drink_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お飲み物"
+        />
 
         <MyCard 
           title={<h2>ウィスキー／ショット</h2>}
@@ -70,7 +76,10 @@ class Drink extends React.Component {
                 </p>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/drink_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お飲み物"
+        />
 
         <MyCard 
           title={<h2>ノンアルコール／ソフトドリンク</h2>}
@@ -83,7 +92,10 @@ class Drink extends React.Component {
                 </p>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/drink_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お飲み物"
+        />
 
         <CardContent
           sx={{

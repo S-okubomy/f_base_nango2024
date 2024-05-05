@@ -26,7 +26,10 @@ class Party extends React.Component {
                 </Link>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/party_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　宴会プラン"
+        />
 
         <MyCard 
           title={<h2>ご予約・お問合せ</h2>}
@@ -44,7 +47,10 @@ class Party extends React.Component {
                     ※前日、当日キャンセルは、キャンセル料を頂きます。<br/>
               <br/>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/party_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　ご予約・お問合せ"
+        />
 
         <CardContent
           sx={{

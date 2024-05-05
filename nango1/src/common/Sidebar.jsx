@@ -31,7 +31,10 @@ class Sidebar extends React.Component {
                 楽しいチャンネルなので登録よろしくお願いします&#x1f647;
               </div>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
 
         <MyCard 
           title="店内動画"
@@ -48,7 +51,10 @@ class Sidebar extends React.Component {
                 （店内風景）南郷7丁目 フォーク酒場
               </div>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
 
         <MyCard 
           title="facebook"
@@ -64,7 +70,10 @@ class Sidebar extends React.Component {
                 <div class="fb-post" data-href="https://www.facebook.com/toshihiro.suzuki.796" data-width="500" data-show-text="true"></div>
               </div>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
 
         <MyCard
           title="住所"
@@ -75,7 +84,10 @@ class Sidebar extends React.Component {
               <li><a href="tel:090-9756-2401">（携帯）090-9756-2401</a></li>
               <li><span style={{ fontSize: "10px" }} ><a href="https://nango7.okbmk.com/">https://nango7.okbmk.com/</a></span></li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
 
         <MyCard
           title="営業時間"
@@ -93,7 +105,10 @@ class Sidebar extends React.Component {
                 <Link to="/nango/rt/system_nango_temp">◎詳細なご利用方法は<span style={{ color: "red" }} >こちら<br/></span></Link>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
       </div>
     );
   };

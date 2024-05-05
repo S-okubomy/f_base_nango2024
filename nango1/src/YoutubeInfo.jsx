@@ -69,7 +69,10 @@ class YoutubeInfo extends React.Component {
                 </h1>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/youtube_info_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　ライブ配信及び動画収録サービスのご案内"
+        />
       </div>
     );
   };

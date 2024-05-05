@@ -43,30 +43,33 @@ const Login = () => {
               <MyCard 
                 title={<h2>ログイン画面</h2>}
                 content={
-                <ul>
-                  <form onSubmit={handleSubmit}>
-                    <div>
-                      <label>メールアドレス</label>&nbsp;
-                      <input
-                      name="email"
-                      type="email"
-                      value={loginEmail}
-                      onChange={(e) => setLoginEmail(e.target.value)}
-                      />
-                    </div>
-                    <div>
-                      <label>パスワード</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input
-                        name="password"
-                        type="password"
-                        value={loginPassword}
-                        onChange={(e) => setLoginPassword(e.target.value)}
-                      />
-                    </div>
-                    <button>ログイン</button>
-                  </form>
-                </ul>
-              }/>
+                  <ul>
+                    <form onSubmit={handleSubmit}>
+                      <div>
+                        <label>メールアドレス</label>&nbsp;
+                        <input
+                        name="email"
+                        type="email"
+                        value={loginEmail}
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <label>パスワード</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input
+                          name="password"
+                          type="password"
+                          value={loginPassword}
+                          onChange={(e) => setLoginPassword(e.target.value)}
+                        />
+                      </div>
+                      <button>ログイン</button>
+                    </form>
+                  </ul>
+                }
+                shareUrl="https://nango7.okbmk.com/"
+                msg="フォーク酒場　“南郷７丁目”"
+              />
             </div>
 
 

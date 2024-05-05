@@ -122,7 +122,10 @@ function RegDbTopInfo() {
                       top_info_nodes
                     }
                   </ul>
-              }/>
+                }
+                shareUrl="https://nango7.okbmk.com/"
+                msg="フォーク酒場　“南郷７丁目”"
+              />
             </div>
           )}
         </>

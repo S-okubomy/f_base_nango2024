@@ -129,7 +129,10 @@ class QaByAi extends React.Component {
                   </div>
                 </li>
               </ul>
-          }/>
+            }
+            shareUrl="https://nango7.okbmk.com/nango/rt/qa_by_ai_temp"
+            msg="フォーク酒場　“南郷７丁目”　チャットボットAI南郷君"
+          />
 
           <CardContent
             sx={{

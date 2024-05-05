@@ -34,7 +34,10 @@ class Food extends React.Component {
                 </p>
               </li>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/food_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　お食事"
+        />
 
         <CardContent
           sx={{

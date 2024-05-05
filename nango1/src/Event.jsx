@@ -17,7 +17,10 @@ class Event extends React.Component {
               <iframe src="https://freecalend.com/open/mem108709_nopopon" style={{ border: "solid 1px #777"}} width="880" height="600" 
                 frameBorder="0" scrolling="no" loading="lazy"></iframe>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/event_nango_temp"
+          msg="フォーク酒場　“南郷７丁目”　イベントカレンダー"
+        />
 
         <CardContent
           sx={{

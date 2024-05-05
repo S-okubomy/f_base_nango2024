@@ -142,7 +142,10 @@ class Top extends React.Component {
                 </div>
               </Slider>
             </ul>
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”の店内風景"
+        />
 
         <MyCard 
           title="“いらっしゃいませ！”　当店のコンセプトについてご説明いたします。"
@@ -218,8 +221,10 @@ class Top extends React.Component {
                   </table>
               </li>
             </ul>
-         }/>
-
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="フォーク酒場　“南郷７丁目”"
+        />
 
         <MyCard 
           title={<div>南郷７丁目からのお知らせ <button className="second"><Link to="/nango/rt/regdb_top_info"><strong>投稿（管理者）</strong></Link></button></div>}
@@ -231,7 +236,10 @@ class Top extends React.Component {
               }
             </ul>
 
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/"
+          msg="南郷７丁目からのお知らせ"
+        />
 
         <MyCard 
           title="イベントカレンダー"
@@ -240,7 +248,10 @@ class Top extends React.Component {
               <Link to="/nango/rt/event_nango_temp" ><img src="/static/hp_nango/images/event.jpg" alt="イベントカレンダー" width="100%" style={{ margin: "0px" }} /></Link>
             </ul>
 
-        }/>
+          }
+          shareUrl="https://nango7.okbmk.com/nango/rt/event_nango_temp"
+          msg="南郷７丁目  イベントカレンダー"  
+        />
           
 
 
